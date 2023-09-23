@@ -1,0 +1,35 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-1}
+\problem{4} 
+
+\begin{document}
+
+Předpokládáme, že Bospor byl první na tahu. Pak Bospor zahrál celkem
+jedenáctkrát. Proto nám stačí dokázat, že ať už obarvíme jakýkoliv
+jedenáct políček na šachovnici $7 \times 3$, jsou čtyři takové, které
+vytvoří obdélník podle zadání.
+
+Nechť jsou řádky delší než sloupce, neboli šachovnice je tvořena 3 řádky o
+velikosti 7 a 7 sloupci o velikosti 3. Pokud jeden z sloupci je celý vybarven, pak
+pro vznik čtverce stačí, aby v alespoň jednom dalším sloupci byly alespoň
+dvě vybarvená políčka. To podle Dirichletova principu musí platit, protože
+zbývajících sloupců je šest, dalších políček k vybarvení je 8 a $8 > 6$.
+
+Teď nám zbývá vyřešit případ, kdy není žádný sloupec vybarven celý. Pak musí
+být minimálně 4 sloupce, kde jsou dvě vybarvená políčka. Ale protože
+počet kombinací, jak vybarvit sloupec dvěmi barvami, jsou $\binom{3}{2} = 3$,
+musí podle Dirichletova principu být jedno ze sloupců vybarveno stejně,
+a tím pádem tvořit obdélník.
+
+Protože jsme vyřešili všechny možné případy, je tímto důkaz u konce.
+
+
+\end{document}

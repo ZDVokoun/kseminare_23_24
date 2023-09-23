@@ -1,0 +1,65 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-1}
+\problem{3} 
+
+\begin{document}
+
+Jako první zjistíme koeficient $k$ podobnosti trojúhelníků $DFI$ a $AED$. Ze zadání
+jsme schopni získat tyto dvě rovnosti:
+
+\[
+	|AE| = |DF| + |FC|
+\]
+\[
+	|DF| = 2 |FC|
+\]
+
+Z těchto rovností jsme schopni jednoduše zjistit $k$:
+
+\[
+	k = \frac{|DF|}{|AE|} = \frac{2}{3}
+\]
+
+Teď máme na výběr dva způsoby, jak zjistit výšku trojúhelníku $ABJ$. První,
+který mě napadl, spočíval v tom, že když si představíme, že čtverců v krabici
+je takhle naskládáno nekonečně mnoho, můžeme výšku trojúhelníku $ABJ$ vyjádřit
+jako geometrickou řadu, protože postupně se ty krabice budou přibližovat bodu $J$:
+
+\[
+	|AB;J| = |AE| \cdot \sum^{\infty}_{n=1} \left(\frac{2}{3}\right)^{n-1}
+	= \frac{1}{1 - \frac{2}{3}} \cdot |AE| = 3 |AE|
+\]
+
+Nebo to můžeme zjistit více geometrickým způsobem. Nechť je bod $X$ průsečík
+přímky $AB$ a výšky trojúhelníku $ABJ$ z bodu $J$, tudíž úsečka $JX$ bude
+tvořit výšku trojúhelníku $ABJ$ z bodu $J$. Pak jsou si trojúhelníky
+$BXJ$ a $GCB$ podobné. Jednoduše pak můžeme zjistit, že $|CG| = \frac{1}{3}|AE|$,
+díky čemuž jsme schopni získat soustavu rovnic:
+
+\[
+	\frac{|BX|}{|JX|} = \frac{1}{3}
+\]
+\[
+	|JX| = |AB| + |BX| = 2|AE| + |BX|
+\]
+
+Z níž zjistíme, že:
+
+\[
+	3 |BX| = 2 |AE| + |BX| \ztoho |BX| = |AE| \ztoho |JX| = 3 |AE|
+\]
+
+Teď můžeme získat velikost části trojúhelníku $ABJ$ tvořena čtvercem $BCDE$:
+
+\[
+	\frac{|BCDE|}{|ABJ|} = \frac{|AE|^2}{\frac{2|AE| \cdot 3 |AE|}{2}} = \frac{1}{3}
+\]
+
+\end{document}

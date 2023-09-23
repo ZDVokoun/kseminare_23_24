@@ -1,0 +1,110 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{1} 
+
+\begin{document}
+
+\section{Úloha 2}
+
+U velčiny práce $W$ si musíme uvědomit to, že velčina $\mathbf{s}$ je
+vzdálenost výchozího a koncovýho bodu, nikoliv dráha. Ta dráha může být
+různá, ale pokud je výchozí a koncový bod stejný, je práce stejná, protože
+se stav hmotného bodu změnil stejně. Proto je práce skalární.
+
+\section{Problém 3}
+
+Ano, práce plynu $W$ může být záporná, protože plyn je stačitelný. Tato práce
+se někdy označuje jako $W' = - W$, která označuje práci vykonanou na plynu.
+
+\section{Úloha 4}
+
+\subsection{První}
+
+Ze zadání víme, že tento děj je izotermický, proto nutně platí:
+
+\[
+	p V = \text{konst.}
+\]
+
+Proto nový objem bubliny bude:
+
+\[
+	V' = \frac{p V}{p'}
+\]
+
+Když dosadíme za objem vzorec pro objem koule, dostaneme:
+
+\[
+	\frac{4}{3} \pi r'^3 = \frac{4 p}{3 p'} \pi r^3
+\]
+\[
+	r'^3 = \frac{p}{p'} r^3
+\]
+\[
+	\frac{r'}{r} = \sqrt[3]{\frac{p}{p'}}
+\]
+
+Teď zbývá dosadit hodnoty:
+
+\[
+	\frac{r'}{r} = \sqrt[3]{\frac{p' + h \rho g}{p'}}
+	= \sqrt[3]{\frac{101325 + 22 \cdot 998 \cdot 9{,}81}{101325}}
+	\doteq 1{,}46
+\]
+
+\subsection{Druhý}
+
+Teď musíme pracovat i s teplotou soustavy, ale stále platí:
+
+\[
+	\frac{p V}{T} = \text{konst.}
+\]
+
+Z čehož lze odvodit:
+
+\[
+	V' = \frac{p V T'}{p' T}
+\]
+
+\[
+	\frac{r'}{r} = \sqrt[3]{\frac{p T'}{p' T}}
+\]
+
+Po dosazení dostaneme:
+
+\[
+	\frac{r'}{r} = \sqrt[3]{\frac{(101325 + 22 \cdot 998 \cdot 9{,}81) \cdot (273{,}15 + 37)}{101325 \cdot (273,15 + 35)}}
+	\doteq 1{,}465
+\]
+
+Jak je vidět, malý rozdíl zde ve výsledku je.
+
+\subsection{Třetí}
+
+Protože se jedná o izotermní děj, pro zjištění práce vykonané bublinou $W'$ nám
+stačí zjistit hodnotu tohoto určitého integrálu:
+
+\[
+	\int^{V'}_{V} p \, dV = \int^{V'}_{V} \frac{p' V'}{V} \, dV
+	= p' V' \ln \frac{V'}{V} = p' V' \ln \frac{p}{p'}
+\]
+\[
+	p' V' \ln \frac{p}{p'}
+	= 101325 \cdot \frac{4}{3} \pi \cdot 3{,}5^3 \cdot 10^{-18} \cdot \ln \frac{101325 + 22 \cdot 998 \cdot 9{,}81}{101325}
+	\doteq 2{,}07 \cdot 10^{-11} \text{J}
+\]
+
+V realitě by tento děj nebyl izotermní, protože v hloubce 22 m bude s chladněji
+než při hladině a zároveň ten děj neproběhne okamžitě, proto dojde k přenosu
+tepla mezi mořem a bublinou.
+
+
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1p}
+\problem{4} 
+
+\begin{document}
+
+Ze zadání nutně vyplývá, že polynom $P(x)$ musí mít nutně dva různé kořeny,
+jinak polynom $P(Q(x))$ nemůže mít čtyři rúzné kořeny. Dále kořeny polynomu
+$P(x)$ musí být čísla $Q(x_1)$, $Q(x_2)$, $Q(x_3)$ a $Q(x_4)$, ale protože
+má $P(x)$ jen dva kořeny, musí si být některé z těchto čísel rovny. Zde využijeme
+toho, že graf kvadratické funkce je osově souměrný a platí pro ni
+$Q(c - x) = Q(c + x)$ pro určité reálné číslo $c$. Pak tedy kvůli nerovnosti
+ze zadání musí platit $Q(x_1) = Q(x_4)$ a $Q(x_2) = Q(x_3)$, díky čemuž můžeme
+použít substituci $x_1 = c - x_{14}$, $x_2 = c - x_{23}$, $x_3 = c + x_{23}$ a
+$x_4 = c + x_{14}$. Po dosazení a zjednodušení dostaneme:
+
+\[
+	x_1 + x_4 = x_2 + x_3
+\]
+\[
+	c - x_{14} + c + x_{14} = c - x_{23} + c + x_{23}
+\]
+\[
+	2c = 2c
+\]
+
+Tím je důkaz u konce.
+
+\end{document}

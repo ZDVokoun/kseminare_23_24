@@ -1,0 +1,44 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{5} 
+
+\begin{document}
+
+Postup přelévaní, díky němuž získáme veškeré konfigurace, je
+takový, že z první zkumavky budeme přelévat do druhé zkumavky
+a pokud druhá zkumavka je plná, tak ji vylijeme a vylijeme zbytek
+v první zkumavce (dále jako "přetečení").
+
+Nechť je první zkumavka o velikosti $n$ a druhá o velikosti $k$.
+Výše zmíněným způsobem prakticky aplikujeme modulární aritmetiku,
+proto budeme samostatně počítat kroky, kdy normálně přeléváme a kdy
+dojde k přetečení. Aby všechny konfigurace byly jedinečný, musíme
+tento postup ukončit, jakmile přelijeme celkem $\text{lcm}(n,k)$
+jednotek vody. Proto napustíme první zkumavku a
+rovnou přelijeme do druhé celkem $\frac{\text{lcm}(n,k)}{k}$-krát.
+
+Dále počet situací, kdy dojde k přetečení, je
+$\frac{\text{lcm}(n,k)}{k} - 1$. Protože u každé této situace
+provedeme dva kroky, počet kroků je:
+
+\[
+	2 \cdot \text{lcm}(n,k) \cdot \left(\frac{1}{n} + \frac{1}{k}\right) - 2
+\]
+
+Protože jsme ale nezahrnuli krok, kdy $(0, 0)$ se změní na $(n, 0)$ a
+kdy se $(0, k)$ změní na $(n, k)$, konečný počet konfigurací je:
+
+\[
+	2 \cdot \text{lcm}(n,k) \cdot \left(\frac{1}{n} + \frac{1}{k}\right)
+	= 2 \cdot \frac{n + k}{\text{gcd}(n,k)}
+\]
+
+\end{document}

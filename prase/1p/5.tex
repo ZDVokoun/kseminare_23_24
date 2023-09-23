@@ -1,0 +1,30 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1p}
+\problem{5} 
+
+\begin{document}
+
+Zde použiji důkaz sporem. Předpokládejme, že existuje graf $G$, u kterého
+Pepa nemá šanci zdolat celou trasu a zároveň splňuje zadání.
+
+Pro potřeby důkazu použiju algoritmus, u kterého si vyberu směr cesty a pak
+zjednodušuji zadaný graf tak, že v každém kroku si najdu hranu
+$e_{i,i+1}$, kterou je Pepa schopen ze
+zásob vody ve vrcholu $v_i$ překonat, a pak ji spolu s vrcholy $v_i$ a $v_{i+1}$
+nahradíme novým vrcholem se zásoby vody o velikosti $|v_i| + |v_{i+1}| - |e_{i,i+1}|$,
+dokud budou hrany k nahrazování. Tento algoritmus zachovává vlastnost, že ve studních
+je přesně tolik vody, kolik je potřeba ke zdolání celé cesty.
+
+Když do tohoto algoritmu dáme jako vstup
+graf $G$, dostaneme graf $G'$, kde ale pro každý vrchol $v_i$ a hranu
+$e_{i,i+1}$ platí $v_i < e_{i, i+1}$, což je spor. Tím je důkaz u konce.
+
+
+\end{document}

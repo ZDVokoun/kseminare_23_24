@@ -1,0 +1,26 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{36-Z1}
+\problem{4} 
+
+\begin{document}
+
+Protože zajímavost každého předmětu je nezáporná, můžeme použít hladový
+algoritmus. Ten bude fungovat tak, že v každém
+kroku posouvá index posledního pytlíku, přepočítá si hmotnost a zajímavost
+aktuálního úseku, pokud je hmotnost příliš vysoká, posunu první index a
+přepočítám hmotnost a zajímavost, a následně zajímavost porovnám z aktuálním
+maximem a případně si uložím indexy. Pokud přepočítávání v každém kroku
+implementuje přepočítáváním z úseku v předchozím kroku (zjistíme, jak se změnila
+při změně indexu hmotnost a zajímavost) nebo pomocí prefixových součtů, má
+tento algoritmus časovou složitost $\mathcal{O}(n)$ a prostorovou složitost
+$\mathcal{O}(1)$.
+
+\end{document}

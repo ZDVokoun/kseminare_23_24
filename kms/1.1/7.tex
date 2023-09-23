@@ -1,0 +1,31 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-1}
+\problem{7} 
+
+\begin{document}
+
+Nechť polynom $Q(x) = P(x) - x$. Pak platí, že pro všechna reálná $x$ platí
+$Q(x) \geq 0$, $Q(1) = 0$, $Q(2) = 2$, $Q(3) = 0$. Protože polynomy čtvrtého stupně
+mají nejvýše tři extrémy, nemůže se jednat o konstantní funkci a platí
+podmínka $Q(x) \geq 0$, musí mít polynom $Q(x)$ v hodnotách 1 a 3
+dvojnásobné kořeny. Proto tento polynom musí být $Q(x) = k (x - 1)^2 (x - 3)^2$,
+kde $k$ zjistíme z funkční hodnoty v bodě 2:
+
+\[
+	k \cdot (2 - 1)^2 \cdot (2 - 3)^2 = 2 \ztoho k = 2
+\]
+
+Z definice polynomu $Q(x)$ pak můžeme získat $P(x)$:
+
+\[
+	P(x) = 2 (x - 1)^2 (x - 3)^2 + x = 2 x^4 - 16 x^3 + 44 x^2 - 47 x + 18
+\]
+
+\end{document}
