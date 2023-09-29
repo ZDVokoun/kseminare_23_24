@@ -1,0 +1,28 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{7} 
+
+\begin{document}
+
+Nejprve si ukážeme, že pro pole o sudé velikosti má vyhrávající strategii má druhý
+hráč. Výherní strategie je jednoduchá -- opakovat tahy prvního hráče na středově
+symetrických políčkách, než hrál první hráč, respektivě když první hráč hrál
+na políčku se souřadnicemi $(i, j)$, bude druhý hráč hrát stejný tah na políčku
+se souřadnicemi $(n + 1 - i, n + 1 - j)$. Druhý hráč nemůže pak udělat chybu,
+protože touto strategií zařídí, aby vždy mohl hrát, pokud první hráč mohl odehrát.
+
+Pro hrací pole o liché velikosti má ale výherní strategii první hráč. Důvod je
+ten, že první hráč je schopný se dostat do stejné pozice jako druhý hráč v poli
+o sudé velikosti tím, že zahraje jakýkoli tah do středu pole. Tím donutí druhého
+hráče udělat tah a pak může první hráč vesele praktikovat strategii popsanou výše.
+
+
+\end{document}

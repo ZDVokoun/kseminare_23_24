@@ -1,0 +1,68 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{4} 
+
+\begin{document}
+
+Po zbytek řešení jsem stanovil bez újmy na obecnosti, že $|AD| = 1$, abych
+si zkrátil zápis.
+
+Protože jsou ramena $AD$ a $BC$ stejně dlouhá, musí se jednat o rovnoramenný
+lichoběžník, proto úhly $|\angle DAB| = |\angle CBA| = \phi$ jsme schopni zjistit z pravoúhlého trojúhelníku
+$AXD$, kde bod $X$ je pata výšky z bodu $D$ na stranu $AB$:
+
+\[
+	\cos \phi = \frac{|AX|}{|AD|} = \frac{\frac{|AB| - |CD|}{2}}{1} = \frac{1}{2}
+\]
+\[
+	\phi = \arccos \frac{1}{2} = 60^{\circ}
+\]
+
+Zároveň pro výšku lichoběžníku $ABCD$ platí:
+
+\[
+	v = |AX| = \sin \phi = \frac{\sqrt{3}}{2}
+\]
+
+Čehož využiji pro výpočet obsah $S_{ABCD}$:
+
+\[
+	S_{ABCD} = \frac{1}{2} \cdot (|AB| + |CD|) \cdot v = \frac{5 \sqrt{3}}{4}
+\]
+
+Teď se pustíme do výpočtu obsahu trojúhelníku $ABE$. Protože si musíme nejprve
+zkontrolovat, jestli se trojúhelník vejde do lichoběžníku, zjistíme nejprve
+výšku trojúhelníku $ABE$:
+
+\[
+	\tan \frac{\phi}{2} = \frac{v_{ABE}}{\frac{|AB|}{2}}
+\]
+\[
+	v_{ABE} = \frac{3}{2} \tan 30^{\circ} = \frac{\sqrt{3}}{2}
+\]
+
+Výšky lichoběžníku $ABCD$ a trojúhelníku $ABE$ jsou stejný, tudíž můžeme počítat
+s celým obsahem toho trojúhelníku:
+
+\[
+	S_{ABE} = \frac{|AB| \cdot v_{ABE}}{2} = \frac{3 \sqrt{3}}{4}
+\]
+
+A zjistit část lichoběžníku $ABCD$ tvořenou trojúhelníkem $ABE$:
+
+\[
+	\frac{S_{ABE}}{S_{ABCD}} = \frac{\frac{3 \sqrt{3}}{4}}{\frac{5 \sqrt{3}}{4}}
+	= \frac{3}{5}
+\]
+
+Trojúhelník $ABE$ zaplňuje 60\% obsahu lichoběžníku $ABCD$.
+
+\end{document}

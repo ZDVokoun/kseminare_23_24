@@ -1,0 +1,50 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{3} 
+
+\begin{document}
+
+Jako první určíme, jak pro každou cifru se změní ciferný součet při vynásobení
+dvěmi. Protože nemůže dojít k přetečení při přičtení carry (protože velikost
+carry může být nejvýše jedna a nejvyšší sudé jednociferné číslo je 8), stačí
+nám si vytvořit tabulku níže:
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		Cifra & Po vynásobení & Změna cif. součtu \\
+		\hline
+		0     & 0             & 0                 \\
+		1     & 2             & +1                \\
+		2     & 4             & +2                \\
+		3     & 6             & +3                \\
+		4     & 8             & +4                \\
+		5     & 1 + 0         & -4                \\
+		6     & 1 + 2         & -3                \\
+		7     & 1 + 4         & -2                \\
+		8     & 1 + 6         & -1                \\
+		9     & 1 + 8         & 0                 \\
+		\hline
+	\end{tabular}
+	\caption{Rozbor cifer}
+\end{table}
+
+Jelikož číslo 18 není dvojnásobek čísla 12, musíme použít alespoň jedno z čísel
+5, 6, 7, 8. Ale ať už vybereme jakékoli z těchto čísel, největší změna, které
+jsme schopni dosáhnout, je +3. Protože však chceme získat změnu +6, abychom z
+ciferného součtu 12 dostali 18, došli jsme ke sporu.
+
+Tudíž Bezzubý si zřejmě ušetřil práci a na žádné číslo nemyslel.
+
+
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{8} 
+
+\begin{document}
+
+Jako první formulujeme vzorec pro obsah lichoběžníku ze zadání $S(k)$.
+Nejprve však musíme zjistit výšku tohoto lichoběžníku. Protože ze zadaných
+hodnot vyplývá, že se musí jednat o rovnoramenný lichoběžník, výšku zjistíme
+přes Pythagorovu větu:
+
+\[
+	v = \sqrt{3^2 - \frac{(k-3)^2}{4}} = \frac{1}{2} \sqrt{-k^2 + 6k + 27}
+	= \frac{1}{2} \sqrt{-(k+3)(k-9)}
+\]
+
+Teď můžeme konečně formulovat vzorec pro obsah lichoběžníku:
+
+\[
+	S(k) = \frac{1}{4} (k + 3) \sqrt{-(k+3)(k-9)}
+\]
+
+Abychom zjistili maximum obsahu $S(k)$, musíme tento vzorec zderivovat:
+
+\[
+	S'(k) = \frac{(k - 6)(k + 3)}{2 \sqrt{-(k+3)(k-9)}}
+\]
+
+Protože extrémy funkce $S(k)$ jsou v bodech, kdy $S'(x) = 0$, jen v bodě 6 může
+být extrém. Musíme si však ověřit, že tento bod je opravdu extrém a jestli se
+jedná o maximum.
+
+Prvně si uvědomíme, že funkce $S(k)$ má definiční obor $\langle-3, 9\rangle$.
+Výraz $\sqrt{-(k+3)(k-9)}$ má zřejmě jenom tři extrémy, z nichž v bodech -3 a 9
+je globální minima a zbývající je globální maximum. A
+protože v definičním oboru bude výraz $k + 3$ vždy kladný, funkce $S(k)$ bude mít
+stejně extrémů a stejný počet globálních maxim. A protože extrém, který jsme našli,
+je v bodě 6, nikoliv v bodech -3 či 9, našli jsme globální maximum.
+
+Proto maximálního obsahu dosáhneme, když $k = 6$, kdy pozemek bude mít obsah
+$S(6) = \frac{27 \sqrt{3}}{4}$.
+
+\end{document}

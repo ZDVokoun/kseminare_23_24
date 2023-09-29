@@ -1,0 +1,35 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1p}
+\problem{6} 
+
+\begin{document}
+
+Pro tuto úlohu budu uvažovat graf $G$, jehož vrcholy budou tvořit mrakodrapy
+a hrany budou různé rozdíly výšek o velikosti mocniny dvojky, tudíž pokud jsou
+dva páry mrakodrapů se stejným rozdílem výšek, bude jen jeden z párů spojen
+hranou. Když dokážeme, že graf $G$ je strom, pak počet různých mocnin dvojky
+může být nejvýše $n - 1$. To se pokusím dokázat sporem.
+
+Předpokládejme, že graf $G$ má v sobě cyklus, tudíž se nejedná o strom. V
+tomto cyklu vybereme mrakodrapy s největší výškou a nejmenší výškou. Pokud
+se jedná o cyklus, pak to znamená, že musí existovat pro rozdíl mezi
+největší a nejmenší výškou dva zápisy pomocí součtů a rozdílů mocnin dvojky,
+kde však každá mocnina dvojky bude nejvýše jednou a kde žádná mocnina dvojky
+nebude větší než rozdíl samotný. To však není možné, protože čísla lze ve
+dvojkový soustavě zapsat jen jedním způsobem a při použití rozdílu mocnin
+dvojky jsme nuceni použít mocninu větší než samotný rozdíl. A to je spor,
+proto graf $G$ musí být nutně strom.
+
+Největší počet rozdílných mocnin dvojky je proto $n - 1$ (příklad můžou být
+mrakodrapy o výšce $2^0, 2^1, ..., 2^n$).
+
+
+\end{document}
