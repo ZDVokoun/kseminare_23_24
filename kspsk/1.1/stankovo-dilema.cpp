@@ -19,7 +19,7 @@ signed main(int argc, char *argv[]) {
   cin.tie(NULL);
 
   int n;
-  vint moc(64);
+  vll moc(64);
   cin >> n;
   ll cur = 0;
   for (int i = 0; i < n; i++) {
@@ -27,7 +27,7 @@ signed main(int argc, char *argv[]) {
     moc[getLog(cur)]++;
   }
   ll res = 0;
-  for (int i : moc)
+  for (ll i : moc)
     res += i * (i - 1) / 2;
   cout << res << endl;
 
