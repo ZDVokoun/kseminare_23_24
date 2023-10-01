@@ -1,0 +1,29 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-1}
+\problem{5} 
+
+\begin{document}
+
+Protože nám stačí jakkoliv zněmožnit únik FIITákům, ale Matfyzákům ho umožňit,
+stačí každého jednotlivého FIITáka obestavět. Zeď ale na určité sousední políčko
+FIITáka nebudeme dávat, když je kolem \verb|F|, nebo když je kolem \verb|M|.
+V případě \verb|F| můžeme pokračovat, avšak v případě \verb|M| prohlásíme, že
+řešení neexistuje. Obestavování bude trvat $\mathcal{O}(mn)$.
+
+Jakmile obestavování dokončíme, spočítáme počet Matfyzáků na mapě a následně
+spustíme BFS, abychom spočítali počet Matfyzáků, kteří můžou odejít z budovy.
+Pokud můžou odejít všichni Matfyzáci, vrátíme řešení, jinak prohlásíme, že
+řešení neexistuje.
+
+Tohle všechno zvládneme s časovou složitostí $\mathcal{O}(mn)$ a s paměťovou
+složitostí $\mathcal{O}(mn)$ na uložení, upravování mapy a pro BFS.
+
+\end{document}

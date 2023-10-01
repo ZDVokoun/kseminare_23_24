@@ -1,4 +1,4 @@
 *.log
 *.aux
 */ksp-klient.py
-*/a.out
+*.out

@@ -1,0 +1,32 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-1}
+\problem{3} 
+
+\begin{document}
+
+Zde je důležité si všimnout toho, že aby $p_i \, \& \, p_{i+1} > p_i \oplus p_{i+1}$,
+musí čísla $p_i$ a $p_{i+1}$ mít v bitové reprezentaci nejvýznamější bit na
+stejném indexu. To zjistíme pro hodnotu $x$ tak, že zjistíme hodnotu
+$\lfloor \log_2 x \rfloor$, což jsme schopni schopni spočítat v logaritmickém čase
+vůči velikosti $x$. Pak v staticky alokovaném poli o velikosti
+32 $A$ budeme ukládat počet předmětů, jejichž číslo má nejvýznamější bit v určitém
+indexu. Výsledek pak bude:
+
+\[
+	\sum_{i=0}^{31} \binom{A_i}{2} = \sum_{i=0}^{31} \frac{A_i (A_i - 1)}{2}
+\]
+
+Protože takhle zjistíme počet možných kombinací. Protože nad každým číslem $p_i$
+vypočítáme $\lfloor \log_2 p_i \rfloor$, bude celková složitost $\mathcal{O}(n \log p)$,
+kde $p$ je maximální velikost čísla. A poněvadž alokujeme pořád stejně velké pole,
+paměťová složitost bude konstantní při načteném vstupu.
+
+\end{document}

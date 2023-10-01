@@ -1,0 +1,23 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-1}
+\problem{2} 
+
+\begin{document}
+
+Potom, co načtu všechna mysteriózní patra, pro zjednodušení výpočtu přidám k nim
+ještě patra $z - 1$ a $k + 1$. Pak pro všechna patra najdeme největší vzdálenost
+dvou sousedních pater, což uděláme tak, že všechna patra seřadíme podle jejich čísel
+v čase $\mathcal{O}(p \log p)$ a pak postupně najdeme tu nejdelší vzdálenost v čase
+$\mathcal{O}(p)$ a tu vrátíme. Celková časová složitost je proto $\mathcal{O}(p \log p)$
+a prostorová složitost je $\mathcal{O}(p)$, protože pro seřazení musíme ty patra
+načíst.
+
+\end{document}

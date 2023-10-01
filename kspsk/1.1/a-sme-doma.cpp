@@ -11,11 +11,11 @@ signed main(int argc, char *argv[]) {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
-  ll k = 0, z = 0, p = 0;
-  cin >> k >> z >> p;
+  ll z = 0, k = 0, p = 0;
+  cin >> z >> k >> p;
   vll a(p + 2);
-  a[0] = k - 1;
-  a[p + 1] = z + 1;
+  a[0] = z - 1;
+  a[p + 1] = k + 1;
   for (ll i = 0; i < p; i++)
     cin >> a[i + 1];
   sort(a.begin(), a.end());

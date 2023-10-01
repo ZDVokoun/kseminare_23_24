@@ -1,0 +1,24 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-1}
+\problem{1} 
+
+\begin{document}
+
+Mé řešení jako první vyřeší jediný edge case, a to případ, kdy $n < 3$. Tehdy musí
+být výstup vždy 0. Pak v čase $\mathcal{O}(n)$ najdeme délku nejdelší tužky $m_1$ a
+délku druhé nejdelší tužky $m_2$ tím, že porovnáme délku každé tužky s aktuálně uloženými
+maximy. Pak vrátíme hodnotu výrazu $\min (m_2 - 1, n - 2)$, protože jednou počet
+tužek určuje celkový počet tužek a jindy délka druhé nejdelší tužky. Jelikož tento
+výpočet provedeme v čase $\mathcal{O}(1)$, celková časová složitost je $\mathcal{O}(n)$
+a prostorová složitost $\mathcal{O}(1)$ při předpokladu, že vstup máme již načtený (jinak
+samozřejmě je složitost lineární).
+
+\end{document}

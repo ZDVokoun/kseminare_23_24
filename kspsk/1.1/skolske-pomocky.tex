@@ -1,0 +1,32 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-1}
+\problem{4} 
+
+\begin{document}
+
+V mém řešení jako první pomůcky ze zadání si uložím do nafukovacích polí, kde
+vždy budou pomůcky jednoho typu. Pak zkontroluji, jestli od každého typu je alespoň
+jedna pomůcka, a případně vrátím 0, pokud se tato podmínka nesplnila.
+Každé nafukovací pole pomůcek pak seřadím podle ceny v čase
+$\mathcal{O}(n \log n)$ a následně každou nejlevnější pomůcku daného typu dám
+do vyhledávacího stromu řadící podle kvality a zjistím jejich celkovou cenu.
+Když už teď je celková cena vyšší než $m$, vrátíme 0. Pak
+do té doby, kdy celková cena nepřesahuje $m$, najdeme pomůcku nejmenší kvality,
+najdeme nejlevnější pomůcku stejného typu, ale vyšší kvality, a tuto pomůcku
+přidáme do vyhledávacího stromu a aktualizujeme celkovou cenu. V případě, kdy
+nenajdeme pomůcku vyšší kvality nebo kdy cena přesáhne $m$, vrátíme kvalitu
+pomůcky nejmenší kvality. Protože můžeme až $n$-krát přidávat prvky do vyhledávacího
+stromu, časová složitost této smyčky bude $\mathcal{O}(n \log t)$.
+
+Celková časová složitost je proto $\mathcal{O}(n \log n + n \log t)$ a prostorová
+složitost je $\mathcal{O}(n)$.
+
+\end{document}
