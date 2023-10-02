@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
   DFSUtil(g, vis, lastV, 0);
   vector<pair<int, int>> res;
   for (int v = 1; v < n; v++) {
-    if (!vis[v] && g[v].size() < k) {
+    if (!vis[v] && g[v].size() < k && g[lastV].size() < k) {
       vis[v] = true;
       res.push_back({lastV, v});
       DFSUtil(g, vis, lastV, v);
