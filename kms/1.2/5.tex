@@ -1,0 +1,85 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{5} 
+
+\begin{document}
+
+Jako první rovnici ze zadání upravíme tak, abychom měli jen
+jedno $x$, a to na levé straně:
+
+\[
+	\frac{x}{x + 4} = \frac{5 \lfloor x \rfloor - 7}{7 \lfloor x \rfloor - 5}
+\]
+\[
+	x (7 \lfloor x \rfloor - 5) = (x + 4)(5 \lfloor x \rfloor - 7)
+\]
+\[
+	x (2 \lfloor x \rfloor + 2) = 4 \cdot (5 \lfloor x \rfloor - 7)
+\]
+\[
+	x (\lfloor x \rfloor + 1) = 10 \lfloor x \rfloor - 14
+\]
+
+Protože na levé straně musí být celé číslo, pro číslo $x$ musí platit
+$x = \lfloor x \rfloor + \frac{k}{\lfloor x \rfloor + 1}$, kde číslo $k$
+je celé nezáporné číslo a pro které $k < \lfloor x \rfloor + 1$. Po dosazení
+jsme schopni získat tvar, u kterého můžeme rozebrat jednotlivé možnosti:
+
+\[
+	\left(\lfloor x \rfloor + \frac{k}{\lfloor x \rfloor + 1}\right) \left(\lfloor x \rfloor + 1\right)
+	= 10 \lfloor x \rfloor - 14
+\]
+\[
+	\lfloor x \rfloor^2 + \lfloor x \rfloor + k = 10 \lfloor x \rfloor - 14
+\]
+\[
+	k = -\left(\lfloor x \rfloor^2 - 9 \lfloor x \rfloor + 14\right)
+\]
+
+Tento tvar teď upravíme na dva tvary. Jako první tu rovnici upravíme na:
+
+\[
+	k = -( \lfloor x \rfloor - 2) (\lfloor x \rfloor - 7)
+\]
+
+Z tohoto tvaru je vidět, že musí platit $\lfloor x \rfloor \in \langle 2; 7 \rangle$, aby
+bylo $k$ nezáporné číslo. Ale teď tu rovnici upravíme na tento tvar:
+
+\[
+	-\left(\lfloor x \rfloor^2 - 9 \lfloor x \rfloor + (14 + k)\right) = 0
+\]
+
+Pomocí Vi\`{e}tových vzorců můžeme pak rozebrat všechny možné hodnoty
+$\lfloor x \rfloor$ a $k$ ($b$ a $c$ značí koeficienty kvadratické rovnice
+ve tvaru $x^2 + bx + c$):
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$-b$  & $c$              & $k$ \\
+		\hline
+		2 + 7 & $2 \cdot 7 = 14$ & 0   \\
+		3 + 6 & $3 \cdot 6 = 18$ & 4   \\
+		4 + 5 & $4 \cdot 5 = 20$ & 6   \\
+		\hline
+	\end{tabular}
+	\caption{Rozbor možných výsledků pomocí Vi\`{e}tových vzorců}
+\end{table}
+
+Díky tabulce a podmínce $k < \lfloor x \rfloor + 1$ víme,
+že $\lfloor x \rfloor \notin \{ 3; 4; 5\}$. Jediná řešení jsou proto:
+
+\[
+	x = 2 \qquad \lor \qquad x = 7 \qquad \lor \qquad x = 6 + \frac{4}{6 + 1} = \frac{46}{7}
+\]
+
+\end{document}
