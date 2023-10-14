@@ -1,0 +1,36 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2p}
+\problem{4} 
+
+\begin{document}
+
+Pro získání součtu všech čísel na tabuli uvažujme následující algoritmus.
+Jako první spočítáme součet aritmetické posloupnosti $n + 1, n + 2, ...,
+	2n$. Následně pro každé sudé číslo provedeme to, že vytvoříme novou posloupnost,
+která zahrnuje poloviny sudých čísel předchozí posloupnosti, součet nové
+posloupnosti následně odečteme a tento postup budeme opakovat na nové
+posloupnosti, dokud máme v posloupnosti sudá čísla.
+
+Důležité je však následující pozorování -- pokud bychom sloučili všechny ty
+posloupnosti vytvořené tím algoritmem podle velikosti, dostaneme posloupnost
+$1, 2, ..., n$. Prvky v této posloupnosti se nemohou opakovat, protože
+pro celé $n$ je $2n$ vždy jedinečné, a zároveň pro posloupnost $n + 1,
+	n + 2, ..., 2n$ a pro posloupnost $n + 1, n + 2, ..., 2n + 1$ v jednom
+kroku dostaneme posloupnost $\left\lfloor \frac{n}{2} \right\rfloor + 1, ..., n$.
+
+Tím pádem součet čísel na tabuli bude:
+
+\[
+	n \cdot \frac{3n + 1}{2} - n \cdot \frac{n + 1}{2}
+	= \frac{n}{2} (3n + 1 - n - 1) = n^2
+\]
+
+\end{document}

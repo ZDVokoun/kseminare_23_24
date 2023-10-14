@@ -48,37 +48,40 @@ signed main(int argc, char *argv[]) {
   pint max_ij = {0, 0};
 
   int i = 0, j = 0;
+  auto cur = Counter.getMax();
   while (i < n) {
     Counter.increase(f[i]);
-    auto cur = Counter.getMax();
-    if (Counter.len - cur.second > d) {
+    cur = Counter.getMax();
+    while (Counter.len - cur.second > d) {
       Counter.decrease(f[j]);
       j++;
+      cur = Counter.getMax();
     }
-    cur = Counter.getMax();
     if (max_len < Counter.len) {
       max_len = Counter.len;
-      max_res = cur;
+      max_res = Counter.getMax();
       max_ij = {i, j};
     }
     i++;
   }
 
-  cout << max_len << endl;
-  if (t == 1)
-    return 0;
   int k = 0;
   for (int i = max_ij.second; i <= max_ij.first; i++)
     if (f[i] != max_res.first)
       k++;
-  // if (k == d + 1) {
-  //   for (int i = max_ij.second; i <= max_ij.first - 1; i++)
-  //     if (f[i] != max_res.first)
-  //       cout << i << " " << max_res.first << endl;
-  //   cout << max_ij.first << " " << max_res.first + 1 << endl
-  //        << max_ij.first << " " << max_res.first << endl;
-  //   return 0;
-  // }
+  if (max_len == n && d == 1 && k == 0) {
+    cout << max_len - 1 << endl;
+    if (t == 2) {
+      if (f[0] == 0)
+        cout << n - 1 << " " << 1 << endl;
+      else
+        cout << n - 1 << " " << 0 << endl;
+    }
+    return 0;
+  }
+  cout << max_len << endl;
+  if (t == 1)
+    return 0;
   for (int i = max_ij.second; i <= max_ij.first; i++)
     if (f[i] != max_res.first)
       cout << i << " " << max_res.first << endl;

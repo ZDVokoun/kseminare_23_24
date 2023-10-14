@@ -1,0 +1,43 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2p}
+\problem{2} 
+
+\begin{document}
+
+Jako první upravíme výraz ze zadání do tohoto tvaru:
+
+\[
+	2023 \cdot 2025 \mid 2023a + 2025b
+\]
+
+Tedy musí nutně platit:
+
+\[
+	2023 \mid 2023a + 2025b
+\]
+\[
+	2025 \mid 2023a + 2025b
+\]
+
+A protože čísla 2023 a 2025 jsou nesoudělná ($2023 = 7 \cdot 17^2$ a
+$2025 = 3^4 \cdot 5^2$), musí platit $a = 2025 a'$, $b = 2023 b'$, kde
+$a'$ a $b'$ jsou celá čísla. Pak tedy:
+
+\[
+	2024^2 - 1 \mid 2025 a' \cdot 2023 b'
+\]
+\[
+	2023 \cdot 2025 \mid 2023 \cdot 2025 \cdot a'b'
+\]
+
+Což zřejmě platí. Tím je důkaz u konce.
+
+\end{document}
