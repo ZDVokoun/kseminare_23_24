@@ -46,7 +46,16 @@ signed main(int argc, char *argv[]) {
   int max_len = 0;
   pair<ll, int> max_res = {0, 0};
   pint max_ij = {0, 0};
-
+  if (n == 1) {
+    cout << 1 << endl;
+    if (t == 2) {
+      if (f[0] == 0)
+        cout << 0 << " " << 1 << endl;
+      else
+        cout << 0 << " " << 0 << endl;
+    }
+    return 0;
+  }
   int i = 0, j = 0;
   auto cur = Counter.getMax();
   while (i < n) {
@@ -72,7 +81,7 @@ signed main(int argc, char *argv[]) {
   if (max_len == n && d == 1 && k == 0) {
     cout << max_len - 1 << endl;
     if (t == 2) {
-      if (f[0] == 0)
+      if (max_res.first == 0)
         cout << n - 1 << " " << 1 << endl;
       else
         cout << n - 1 << " " << 0 << endl;
