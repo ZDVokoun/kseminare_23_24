@@ -1,0 +1,44 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{1} 
+
+\begin{document}
+
+Abychom zjistili, jestli je zadaný strom symetrický, musíme zkontrolovat, jestli
+strom sestává ze dvou podstromů připojených na kořen a následně tyto podstromy
+naráz procházet a kontrolovat (slovem naráz nemyslím paralelně), jestli navštívené vrcholy jsou stejné.
+
+K tomu však musíme přijít na způsob, jak procházet binární stromy tak, abychom
+používali jen konstantně paměti. Všechny vrcholy můžeme však navštívit
+následujícím způsobem:
+
+\begin{enumerate}
+	\item Nejprve půjdeme do listu, který je nejvíce nalevo a který je z aktuálního
+	      vrcholu dostupný průchodem dolů, neboli půjdeme vždy po
+	      levým synovi, a pokud levý syn aktuálního vrcholu neexistuje, půjdeme po
+	      pravém synovi.
+	\item Následně si uložíme ukazatel a vrátíme se k otci. Při návštěvě otce
+	      zkontrolujeme, jestli jsme se vrátili z pravého syna porovnáním ukazatelů.
+	      Pokud ano, půjdeme k otci aktuálního vrcholu a postup opakujeme, jinak
+	      půjdeme po pravém synovi a následně provedeme krok (1).
+	\item Pokud chceme se vracet nahoru, ale ukazatel na otce je nulový,
+	      prošli jsme celý graf a ukončíme běh algoritmu.
+\end{enumerate}
+
+Pro průchod levého podstromu použijeme tento postup, pro pravý podstrom prohodíme
+levou a pravou stranu. Zároveň při průchodu dolů vždy zkontrolujeme, jestli syni
+aktuálně procházených vrcholů jsou k sobě symetričtí a následně porovnáme hodnoty
+aktuálních vrcholů.
+
+Protože každý vrchol navštívíme nejvýše třikrát a při návštěvě vrcholu provedeme
+konstantně operací, časová složitost tohoto algoritmu je $\mathcal{O}(n)$.
+
+\end{document}
