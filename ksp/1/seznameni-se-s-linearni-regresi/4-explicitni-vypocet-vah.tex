@@ -1,0 +1,49 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath,amsfonts, amssymb}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1}
+\problem{S} 
+
+\begin{document} 
+
+\section{Úkol 4 -- Explicitní výpočet vah}
+
+Nejdříve musíme určit vzorec, jak získat predikce pro každé dato jako vektor $\mathbf{p}$.
+Pokud máme sloupcový vektor vah $\mathbf{w}$ a řádkový vektor featur $k$-tého
+data $\mathbf{x_k}$, predikce pro $k$-té dato bude $p_k = \mathbf{x}_k \mathbf{w}$.
+Pokud všechna data spojíme do jedné matice $\mathbf{X}$, kde každý řádek bude jedno dato,
+dostaneme potřebný vzorec:
+
+\[
+  \mathbf{p} = \mathbf{X} \mathbf{w}
+\]
+
+Teď se přesuneme k soustavě rovnic, kterou jsme získali derivací MSE vůči vektoru
+$\mathbf{w}$. Zde si ale musíme všimnout, že v každé rovnici provádíme skalární
+součin s vektorem, kde jsou hodnoty $k$-té featury všech dat v trénovacím datasetu. 
+Z toho vyplývá, že vektory $\mathbf{p}$ a $\mathbf{t}$ transformujeme maticí 
+$\mathbf{X}^{\top}$, proto tuto soustavu rovnic zapíšeme maticově jako:
+
+\[
+  \mathbf{X}^{\top} \mathbf{p} = \mathbf{X}^\top \mathbf{t}
+\]
+
+Když dosadíme vzorec pro $\mathbf{p}$, dostaneme:
+
+\[
+  \mathbf{X}^\top \mathbf{X} \mathbf{w} = \mathbf{X}^\top \mathbf{t}
+\]
+
+\[
+  \mathbf{w} = (\mathbf{X}^\top \mathbf{X})^{-1} \mathbf{X}^\top \mathbf{t}
+\]
+
+Což je explicitní vzorec pro výpočet optimálních vah.
+
+\end{document}
