@@ -1,0 +1,64 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{1} 
+
+\begin{document} 
+
+\section{Úloha 2}
+
+Pro bod 1 a 2 si musíme nejdříve odvodit vzorec z definičního vztahu měrné tepelné
+kapacity $c_V$, který zní:
+
+\[
+  c_V = \frac{\d Q}{m \, \d T}
+\]
+
+Po dosazení vzorce ze zadání a úpravách tohoto vztahu jsme schopni vyřešit tuto
+diferenciální rovnici:
+
+\[
+  (aT^2 + bT + c) = \frac{\d Q}{m \, \d T}
+\]
+\[
+  \int m (aT^2 + bT + c) \, \d T = \int 1 \, \d Q
+\]
+\[
+  Q(T) = m T \left(\frac{1}{3} aT^2 + \frac{1}{2} bT + c\right) + C
+\]
+
+Teď jsme schopni zjistit vydané teplo jako rozdíl tepla uloženené v tělese před a
+po ochlazení:
+
+\[
+  Q_1 = Q(90 + 273{,}15) - Q(10 + 273{,}15) \doteq 2672.5 m \, \text{J}
+\]
+
+\[
+  Q_2 = Q(50 + 273{,}15) - Q(10 + 273{,}15) \doteq 1325.46 m \, \text{J}
+\]
+
+Bod 3 je mnohem přímočařejší, protože počítáme s konstantní měrnou tepelnou kapacitou
+a tedy můžeme použít vzorec běžný na středních školách:
+
+\[
+  Q_3 = m \cdot \frac{c_{90^\circ \text{C}} + c_{10^\circ \text{C}}}{2} \cdot (90 - 10)
+    \doteq 2672.36 m \, \text{J}
+\]
+
+Důvod, proč výsledek bodu 2 není polovinou výsledku v bodě 1, je celkem zřejmý z mého
+postupu -- při výpočtu v bodech 1 a 2 jsme nepracovali s lineární, ale kubickou
+funkcí. To je taky důvod, proč se, i když vůči velikosti výsledků celkem málo, liší i 
+výsledky v bodech 1 a 3. Větší je pak výsledek v bodě 1, protože v intervalu
+$\langle 10 + 273{,}15 \, ; \, 90 + 273{,}15 \rangle$ je jak teplo v tělese $Q(t)$, tak
+měrná tepelná kapacita $c_V(T)$ rostoucí (měrná tepelná kapacita $c_V(T)$ má extrém až
+v bodě $\frac{-b}{2a} \doteq 4291 \, \text{K}$).
+
+\end{document}
