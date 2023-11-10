@@ -1,0 +1,46 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-3}
+\problem{4} 
+
+\begin{document} 
+
+Pro vytvoření kolmice ze zadanéhého bodu $X$ vůči rovině $\rho$ jako první zkontruujeme
+kouli se středem $X$, který má na povrchu nějaký bod roviny $\rho$. Pokud je průnik
+kulové plochy této koule a roviny bod, tvoří rovina tečnou rovinu a stačí už jen 
+sestrojit přímku sestrojením dvou rovin, na kterých leží jak tento průnik, tak zadaný 
+bod $X$. Pokud však je průnik kružnice, vytvoříme tři koule s různými středy, které leží
+na této kružnici a které mají na povrchu bod $X$. Když získáme průnik jejich kulových
+ploch, dostaneme bod $X$ a bod $X'$. Bod $X'$ musí být vůči bodu $X$ osově souměrný,
+kde osa je rovina $\rho$, protože známe tři body, od kterých jsou oba body stejně
+vzdáleni. A protože přímka spojující tyto dva body tvoří kolmici vůči ose, stačí
+zkontruovat přímky konstrukcí dvou různých rovin, na kterých leží oba body $X$ a
+$X'$.
+
+Pro zkontruování roviny souměrnosti si pomůžeme tím, že zkontruujeme rovinu kolmou
+vůči oběma zadaným rovinám. Tu zkontruujeme tak, že si vybereme 2 body $X$ a $Y$ na průniku
+obou rovin a zkontruujeme dvě koule, a to se středem $X$ a s bodem $Y$ na povrchu a 
+u druhého naopak. Průnikem kulových ploch obou koulí dostaneme kružnici, která leží
+na rovině kolmé vůči oběma zadaným rovinám, protože tato rovina tvoří osu souměrnosti
+bodů $X$ a $Y$, a tím pádem obou zadaných rovin. Jakmile už máme tuto rovinu
+zkontruovanou, můžeme převést tuto úlohu na planimetrickou tím, že budeme hledat
+osu úhlu průniků kolmé roviny a zadaných rovin (neboli dvou přímek) v této rovině.
+Potom rovinu souměrnosti zkontruujeme vytvořením roviny s bodem z osy úhlu a 
+body $X$ a $Y$.
+
+Pro čtyřstěn $ABCD$ musíme nejdříve pro konstrukci koule vepsané získat střed této
+koule. Ten získáme tak, že postupně zkontruujeme roviny souměrnosti rovin $ABC$ a
+$ABD$, rovin $ABC$ a $BCD$ a rovin $ABC$ a $ACD$. Jejich průnik pak bude bod $S$, který
+bude od rovin každé stěny stejně vzdálen, tím pádem bude středem koule vepsané. Zbývá
+nám pak získat její velikost, k čemuž nám stačí sestrojit kolmici z bodu $S$ na jednu
+ze stěn, abychom získali její patu $P$. Koule vepsaná čtyřstěnu pak bude mít střed $S$
+a na povrchu bude mít bod $P$.
+
+\end{document}

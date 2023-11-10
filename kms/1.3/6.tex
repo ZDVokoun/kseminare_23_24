@@ -1,0 +1,45 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1.3}
+\problem{6} 
+
+\begin{document} 
+
+Protože ta zárovka se součtem zlomků nám umožňuje jednoduše získat ekvivalentní
+úpravou nerovnici s harmonickým průměrem, zkusíme zjistit, jaké hodnoty má aritmetický
+průměr hodnot ve jmenovateli:
+
+\[
+  \frac{(b+2c+d) + (c+2d+a) + (d+2a+b) + (a+2b+c)}{4} = \frac{4a + 4b + 4c + 4d}{4}
+    = a + b + c + d
+\]
+
+Z toho vyplývá, že nerovnice v zadání je jen upravená AH nerovnost (nerovnost mezi
+aritmetickým a harmonickým průměrem), tudíž pro důkaz
+stačí upravit nerovnici do tvaru běžnou pro AH nerovnost:
+
+\[
+  (a+b+c+d) \cdot \left(\frac{1}{b+2c+d} + \frac{1}{c+2d+a} + \frac{1}{d+2a+b} + \frac{1}{a+2b+c}\right) 
+    \geq 4
+\]
+\[
+  \frac{(b+2c+d) + (c+2d+a) + (d+2a+b) + (a+2b+c)}{4} \cdot 
+    \left(\frac{1}{b+2c+d} + \frac{1}{c+2d+a} + \frac{1}{d+2a+b} + \frac{1}{a+2b+c}\right) 
+    \geq 4
+\]
+\[
+  \frac{(b+2c+d) + (c+2d+a) + (d+2a+b) + (a+2b+c)}{4}
+    \geq \frac{4}{\frac{1}{b+2c+d} + \frac{1}{c+2d+a} + \frac{1}{d+2a+b} + \frac{1}{a+2b+c}}
+\]
+
+Tento tvar již zřejmě vyplývá z AH nerovnosti, která vychází z nerovnosti mezi
+průměry.
+
+\end{document}
