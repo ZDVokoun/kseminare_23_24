@@ -1,0 +1,29 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2p}
+\problem{3} 
+
+\begin{document} 
+
+Nechť je číslo $n$ nejmenší číslo posloupnosti po sobě jdoucích 39 čísel, které
+je dělitelné deseti a zároveň na místě desítek nemá číslovku 9. Toto číslo může
+v nejhorším případě mít index 20, proto je vždycky prvkem této posloupnosti taky 
+číslo $n+10$. Protože
+nemůže dojít k "přetečení" kvůli devítce na místě desítek, ciferné součty čísel
+$n$ a $n + 10$ se liší o jedna. Proto nemůžou být kongruentní
+s jednou modulo 11 ciferné součty obou čísel zároveň, tím pádem stačí správně nastavit 
+jednomu z těchto čísel cifru na jednotkovém místě
+a nalezli jsme číslo, jehož ciferný součet je dělitelný jedenácti. A poněvadž
+k číslu $n$ přičteme tímto postupem v nejhorším případě 19, je nalezené číslo
+prvkem naší posloupnosti.
+
+Q. E. D.
+
+\end{document}
