@@ -1,0 +1,49 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1s}
+\problem{1} 
+
+\begin{document} 
+
+Nechť $\alpha$ je úhel u vrcholu A a $\beta$ úhel u vrcholu B. Obsah tětivového
+čtyřúhelníku ABCD můžeme získat dvěma způsoby:
+
+\[
+  S_{ABCD} = \frac{1}{2} \left(|AB| \cdot |DA| \cdot \sin \alpha + |BC| \cdot |CD| \cdot \sin (180^{\circ} - \alpha) \right)
+    = \frac{1}{2} \left(|AB| \cdot |BC| \cdot \sin \beta + |DA| \cdot |CD| \cdot \sin (180^{\circ} - \beta) \right)
+\]
+
+Tuto rovnost můžeme dále upravit:
+
+\[
+  \sin \alpha \cdot (|AB| \cdot |DA| + |BC| \cdot |CD|)
+   = \sin \beta \cdot (|AB| \cdot |BC| + |DA| \cdot |CD|)
+\]
+\[
+  \frac{\sin \beta}{\sin \alpha} = \frac{|AB| \cdot |DA| + |BC| \cdot |CD|}
+    {|AB| \cdot |BC| + |DA| \cdot |CD|}
+\]
+
+Poněvadž trojúhelníky $ABC$ a $ABD$ mají stejné kružnice opsané, ze sinové věty
+máme rovnost:
+
+\[
+  \frac{|BD|}{\sin \alpha} = \frac{|AC|}{\sin \beta}
+\]
+
+Po dosazení konečně dostaneme:
+
+\[
+  \frac{|AC|}{|BD|} = \frac{|AB| \cdot |DA| + |BC| \cdot |CD|}
+    {|AB| \cdot |BC| + |DA| \cdot |CD|}
+\]
+
+\end{document}
