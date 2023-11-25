@@ -24,8 +24,6 @@ signed main(int argc, char *argv[]) {
 
   for (int i = 0; i < n; i++)
     cin >> map[i];
-  // for (int i = 0; i < n; i++)
-  //   cout << map[i] << endl;
 
   ll res = 0;
   for (int y = 0; y < n - 1; y++)

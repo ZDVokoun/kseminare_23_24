@@ -1,0 +1,28 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{4} 
+
+\begin{document}
+
+Protože tohle je úloha, kde cíl je najít komponenty zadaného grafu, z každého
+aktuálně nenavštíveného vrcholu budeme zpouštět DFS, který bude kopírovat
+cestu, kterou voda stékat. Pak pokud při prohledávání narazíme na vrchol,
+která je součástí již nalezené komponenty, pak všechny vrcholy prohledané
+cesty jsou součástí též komponenty. Pokud však dojdeme do neoznačeného údolí, označíme
+všechny vrcholy novým číslem. Tím pádem každý vrchol navštívíme nejvýše jednou.
+
+Pokud takhle budeme označovat čísly od jedničky vrcholy zleva doprava a shora
+dolů, splníme podmínku ze zadání. Pak uloženou mřížku s označenými vrcholy
+vrátíme.
+
+Celkově algoritmus bude mít časovou a prostorovou složitost $\mathcal{O}(n m)$.
+
+\end{document}

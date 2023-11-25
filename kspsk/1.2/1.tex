@@ -1,0 +1,26 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{1} 
+
+\begin{document}
+
+Abychom tuto úlohu vyřešili, stačí nám implementovat následující algoritmus --
+pro každé políčko, které neleží v posledním sloupci či posledním řádku,
+zkontrolujeme, jestli se jedná o levý horní roh diamantu. To určíme jen
+na základě podmínky, že kontrolované políčko je \verb|/|, napravo od něj
+je \verb|\|, dole od něj je \verb|\| a šikmo směrem doprava a dolů od něj
+je \verb|/|. V průběhu si zaznamenáváme jejich počet, který pak nakonec vrátíme.
+
+Protože pro každý políčko provedeme konstantně operací, časová složitost je
+$\mathcal{O}(n m)$. Když budeme předpokládat, že pole už máme načtené, bude
+prostorová složitost konstantní.
+
+\end{document}

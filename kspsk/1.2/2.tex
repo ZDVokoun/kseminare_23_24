@@ -1,0 +1,42 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{2} 
+
+\begin{document}
+
+Jako první přiřadíme k symbolům jejich cifry, a to tak, že posloupnost symbolů
+budeme procházet z leva doprava a budeme přiřazovat k symbolům cifry. To si pak
+budeme ukládat v mapě (slovníku), nebo v poli konstantní velikosti, protože symboly
+můžou být jen z omezeného rozpětí znaků. Symbol nejvyššího
+řádu (nejvíce nalevo) bude cifra \verb|1| a druhý nejlevější symbol, který je
+jiný od prvního, bude cifra \verb|0|, a každý další symbol bude nejmenší cifra,
+která ještě nebyla použita. Tento
+postup bude s použitím řazené mapy $\mathcal{O}(l \log l)$, ale s použitím
+pole $\mathcal{O}(l)$.
+
+Tímto postupem jsme zároveň schopni zjistit základ soustavy tohoto čísla.
+Pokud je použita je jen jedna cifra, pak je číslo zapsaný v dvojkové soustavě,
+jinak základ bude roven počtu různých cifer v čísle. Pak hodnotu
+čísla vypočítáme jako geometrickou řadu:
+
+\[
+	\sum_{k=0}^{l} x_k \cdot r^k
+\]
+
+Kde $x_k$ je cifra na $k$-tém místě odzadu a $r$ je základ čísla. Výpočet pak
+bude trvat, pokud budeme mít hodnoty symbolů uložené v poli, $\mathcal{O}(l)$.
+
+Celkem je asymptotická složitost celého algoritmu $\mathcal{O}(t \cdot l)$, když
+budeme místo slovníku používat pole konstantní velikosti. Protože pole bude
+používat pořád stejně místa, je bez načteného vstupem prostorová složitost
+$\mathcal{O}(1)$.
+
+\end{document}

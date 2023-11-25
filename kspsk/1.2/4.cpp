@@ -53,34 +53,24 @@ signed main(int argc, char *argv[]) {
   int n, m;
   cin >> n >> m;
   vector<vll> map(n, vll(m));
-  vector<tuple<ll, int, int>> arr(n * m);
   for (int y = 0; y < n; y++)
     for (int x = 0; x < m; x++) {
       ll cur;
       cin >> cur;
       map[y][x] = cur;
-      arr[y * m + x] = {cur, x, y};
     }
-  sort(arr.begin(), arr.end());
-  reverse(arr.begin(), arr.end());
 
   vector<vint> result(n, vint(m));
   int curN = 1;
-  for (auto it : arr) {
-    int name = DFS(map, result, n, m, get<1>(it), get<2>(it), curN);
-    if (name == curN)
-      curN++;
-  }
-
-  vector<int> names(curN);
-  int curName = 1;
+  for (int y = 0; y < n; y++)
+    for (int x = 0; x < m; x++) {
+      int name = DFS(map, result, n, m, x, y, curN);
+      if (name == curN)
+        curN++;
+    }
   for (int y = 0; y < n; y++) {
     for (int x = 0; x < m; x++) {
-      if (names[result[y][x]] == 0) {
-        names[result[y][x]] = curName;
-        curName++;
-      }
-      cout << names[result[y][x]];
+      cout << result[y][x];
       if (x < m - 1)
         cout << " ";
     }

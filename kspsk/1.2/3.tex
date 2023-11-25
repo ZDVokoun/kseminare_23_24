@@ -1,0 +1,38 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{3} 
+
+\begin{document}
+
+Jako první potřebujeme zjistit komponenty souvislosti (místnosti) rozložení budovy.
+To zjistíme snadno, z každého nenavštíveného bodu spustíme prohledávání (třeba
+DFS) a dosažitelné políčka mřížky označíme stejným číslem v novém dvourozměrném
+poli. To bude mít časovou i prostorovou složitost $\mathcal{O}(n m)$.
+
+Následně z vytvořeného pole spočítáme obsahy jednotlivých místností a vytvoříme
+nový graf, kde vrcholy budou místnosti a hrany mezi vrcholy značí, že spolu
+sdílejí zeď. Nový graf získáme tím, že projdeme každé políčko a pokud
+sousedí s políčkem jiné místnosti, přidáme mezi nimi hranu. Abychom však předešli duplicitním
+hranám, budeme ukládat nový graf jako pole množin. Asymptoticky je nejlepší
+použít hashtable, ale kvůli konstantě bych spíš použil implementace na základě
+vyhledávacího stromu. A protože místnost může sousedit nejvíce s $\mathcal{O}(n + m)$
+místnostmi, asymptotická složitost tvorby nového grafu je $\mathcal{O}(n m \log (n + m))$.
+
+Pak musíme najít největší místnost vytvořenou spojením dvou místností. Pokud
+jsme zjistili, že celou budovu tvoří jedna místnost, vrátíme obsah té místnosti.
+Jinak zkoušíme sčítat obsahy každé dvojice místností, které jsou v námi vytvořeném grafu
+spojeny hranou. To bude trvat $\mathcal{O}(n m)$, protože nemůže být v budově více
+místností než $n m$. Pak již budeme znát výsledek, který můžeme vrátit.
+
+Celková časová složitost je proto $\mathcal{O}(n m \log(n + m))$ a prostorová
+složitost je $\mathcal{O}(n m)$.
+
+\end{document}

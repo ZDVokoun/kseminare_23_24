@@ -1,0 +1,38 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1-2}
+\problem{5} 
+
+\begin{document}
+
+Pro mé řešení je důležité následující pozorování. Nechť $i$ je index
+určitého čísla a $j$, $k$ jsou indexy větších nebo stejně velkých čísel,
+pro které platí $j < i < k$.
+Pak počet úseků, které mají maximum číslo na indexu $i$, je
+$(i - j) \cdot (k - i)$. Tohle pozorování platí podobně i pro minima úseků.
+
+V mém algoritmu proto jako první si uložím vstup jako pole párů výšky a indexu
+klasu a následně pole setřídím. Pak získám součet minim tím, že si vytvořím
+vyhledávací strom s hodnotami $\{-1, n\}$ a pro každé číslo od nejmenšího
+po největší zjistím pomocí vyhledávacího stromu najdu indexy $j$, $k$, které
+jsem zmiňoval výše. Pak přičtu k celkovýmu součtu
+$(i - j) \cdot (k - i) \cdot x_i$ a pokud $(i - j) \cdot (k - i) > 1$,
+přidám index $i$ do vyhledávacího stromu, jinak je to zbytečné.
+Jakmile pak projdeme všechny
+prvky posloupnosti, provedeme podobný postup, jen budeme postupovat
+od největšího k nejmenšímu, k získání součtu maxim.
+Když už známe součet maxim a minim všech
+posloupností, vrátíme rovnou supersumarizér.
+
+Celý tento algoritmus má časovou složitost $\mathcal{O}(n \log n)$ a
+prostorovou složitost $\mathcal{O}(n)$.
+
+
+\end{document}
