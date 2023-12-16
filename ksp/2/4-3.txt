@@ -1,0 +1,44 @@
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum 
+CS ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+bitshift
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++ ++ 
+u
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ 
+m
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++ ++
+u
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++ ++
+CS ++ ++ ++ ++ ++ ++ CS pop2 ++ ++
+lroll 
+m
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++ ++
+u
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++ ++
+CS ++ ++ ++ ++ ++ ++ CS pop2 ++ ++
+lroll 
+m
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++ ++
+u
+pop2 pop2
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum u ++ ++
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum 
+CS ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+bitshift
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++
+m
+
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum
+CS ++ ++ ++ ++ ++ ++ ++ ++ CS pop2 u
+
+pop2 pop2
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++
+CS ++ ++ ++ ++ ++ ++ CS ++ ++ pop2 
+lroll
+
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum
+CS ++ ++ ++ ++ ++ ++ ++ ++ CS pop2 u
+
+ CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum u
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++
+CS ++ ++ ++ ++ ++ ++ CS ++ ++ pop2 
+lroll CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum u

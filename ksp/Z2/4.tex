@@ -1,0 +1,33 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{Z2}
+\problem{4} 
+
+\begin{document} 
+
+Jako první začneme odstraňováním zpomalováků. Označme nejmenší rychlost
+na určitém místě na trati $k$ (tolerujeme zápornou rychlost). Pak dolní odhad
+počtu zpomalováků k odstranění je $1 - k$. Tohoto počtu odstranění zpomalováků
+jsme taky schopni dosáhnout, a to tím, že začneme od začátku a vždy odstraníme
+zpomalovák, po kterým by vlak zastavil. Tento postup dosáhne tohoto nejmenšího
+počtu odstraňování, protože při každém odstranění se v pozdějších úsecích
+tratě zvýší rychlost o jedna.
+
+Po odstranění zpomalováků buď nastane případ, kdy vlak jede na konci s
+rychlostí jedna, nebo s vyšší rychlostí. V prvním případě máme vystaráno,
+v druhém musíme od zadu odstranit $l - 1$ zrychlováků, kde $l$ je konečná
+rychlost. Tento počet je zřejmě nejmenší. Zároveň jistě dostaneme validní
+trať, protože při odstraňování odzadu nemůže dojít k propadnutí rychlosti
+pod 1. 
+
+Celý tento algoritmus má časovou asymptotickou složitost $\mathcal{O}(n)$.
+
+\end{document}

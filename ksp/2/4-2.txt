@@ -1,0 +1,7 @@
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum // get 2
+CS ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+bitshift
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum ++ ++ ++ // get 5
+u
+CS ++ CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS pop2 CS lensum // get 2
+u
