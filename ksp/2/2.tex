@@ -1,0 +1,33 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2}
+\problem{2} 
+
+\begin{document} 
+
+Jako součást mého algoritmu nejprve inicializujeme dvojrozměrné
+pole celých čísel o velikosti $N \times N$ na nulu. Postupně pro
+každou šišku projdeme všechny místa, které budou šiškou zasažena,
+a přičteme k nim v tabulce jedničku. Tím získáme tabulku, kde pro
+každé políčko máme, kolikrát bude zasažen. To bude trvat celkem
+$\mathcal{O}(S \cdot N^2)$.
+
+Následně pro určení, jaké mravence zachraňovat, provedeme na políčkách,
+kde jsou mravenci, bucket sort podle počtu zasažení. Tím pak jsme
+schopni určit, jaké mravence budeme zachraňovat tím, že budeme procházet
+setřízené mravence od nejméně zasahovaného a budeme kontrolovat, jestli
+počet potřebných krabiček nepřesáhl $K$. Tohle celé bude trvat
+$\mathcal{O}(N^2 + S)$ času.
+
+Celkem algoritmus bude tedy trvat $\mathcal{O}(S \cdot N^2)$ času.
+Prostorová složitost je $\mathcal{O}(N^2 + S)$.
+
+\end{document}
