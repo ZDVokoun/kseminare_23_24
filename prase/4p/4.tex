@@ -1,0 +1,53 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{4} 
+
+\begin{document}
+
+I'm going to prove this inequality for two cases -- when $m > n$ and $m < n$ (when
+$m = n$ it obviously holds).
+
+So suppose that $m > n$. Then inequality:
+
+\[
+	\frac{m!}{\left(m - \frac{m - n}{2}\right)!} \geq \frac{\left(\frac{m + n}{2}\right)!}{\left(\frac{m + n}{2} - \frac{m - n}{2}\right)!}
+\]
+
+holds because a number of partial permutations of $m$ items is
+bigger than a number of partial permutations of $\frac{m + n}{2}$ items due to the assumption.
+From this inequality we are able to get the desired inequality:
+
+\[
+	\frac{m!}{\left(\frac{m + n}{2}\right)!} \geq \frac{\left(\frac{m + n}{2}\right)!}{n!}
+\]
+\[
+	m! \cdot n! \geq \left(\left(\frac{m + n}{2}\right)!\right)^2
+\]
+
+Now suppose $m < n$. Similarly:
+
+\[
+	\frac{n!}{\left(n - \frac{n - m}{2}\right)!} \geq \frac{\left(\frac{n + m}{2}\right)!}{\left(\frac{n + m}{2} - \frac{n - m}{2}\right)!}
+\]
+
+holds. That implies:
+
+\[
+	\frac{n!}{\left(\frac{n + m}{2}\right)!} \geq \frac{\left(\frac{n + m}{2}\right)!}{m!}
+\]
+\[
+	m! \cdot n! \geq \left(\left(\frac{m + n}{2}\right)!\right)^2
+\]
+
+So the inequality holds for all $m$, $n$. Q. E. D.
+
+
+\end{document}

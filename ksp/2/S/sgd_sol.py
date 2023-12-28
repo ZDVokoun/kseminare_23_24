@@ -84,9 +84,9 @@ def main(args: argparse.Namespace):
     # které se učí explicitně pomocí vzorce. Použijte model `Ridge` s parametrem `alpha=args.l2`.
 
     if (args.l2 != 0):
-        sklearn_model = lm.Ridge(alpha=args.l2)
+        sklearn_model = lm.Ridge(alpha=args.l2, fit_intercept=False)
     else:
-        sklearn_model = lm.LinearRegression()
+        sklearn_model = lm.LinearRegression(fit_intercept=False)
     sklearn_model.fit(train_data, train_target)
     sklearn_predict = sklearn_model.predict(test_data)
     test_sklearn_rmse = metrics.mean_squared_error(

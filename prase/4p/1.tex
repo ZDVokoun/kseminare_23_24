@@ -1,0 +1,58 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{1} 
+
+\begin{document}
+
+Firstly, we need to prove that if each animal on the farm gets same
+amount of food, the animals cannot be equal. Suppose that animals are
+equal when they reach similar level of satisfaction after eating given
+amount of food. However, pigs have marginaly bigger minimum food comsumption
+than chicken. Therefore, the animals can't be equal when everyone gets the
+same amount of food.
+
+Let $c_c$, $c_p$ be amount of food chickens and pigs get. If, on average,
+an animal in government gets the same amount of food as an animal outside
+of government, the equation:
+
+\[
+	\frac{o_c c_c + o_p c_p}{o_c + o_p} = \frac{2 g_c c_c + 2 g_p c_p}{g_c + g_p}
+\]
+
+where $o_c$, $o_p$ is the number of chickens and pigs outside of government and
+$g_c$, $g_p$ is the number of chickens and pigs in government, has to hold.
+
+So the only thing remaining is to show a case when this equation holds. For
+$c_c = 1$, $c_p = 10$, $o_c : o_p = 1 : k$ and $g_c : g_p = k : 1$ we can
+show that there exist a real number $k$ which satisfies the relation:
+
+\[
+	\frac{o_c + 10 k o_c}{o_c + k o_c} = 2 \cdot \frac{k g_p + 10 g_p}{k g_p + g_p}
+\]
+\[
+	\frac{1 + 10 k}{1 + k} = 2 \cdot \frac{k + 10}{k + 1}
+\]
+\[
+	10k + 1 = 2k + 20
+\]
+\[
+	8k = 19
+\]
+\[
+	k = \frac{19}{8}
+\]
+
+So in this case, on average, an animal in government gets the same amount of food as
+an animal outside of government, when $o_c : o_p = 8 : 19$ and $g_c : g_p = 19 : 8$.
+
+As this is the only thing we have to show, the proof is complete. Q. E. D.
+
+\end{document}

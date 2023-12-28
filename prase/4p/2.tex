@@ -1,0 +1,42 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{2} 
+
+\begin{document}
+
+We know that inequality $(a - 2b)^2 \geq 0$ has to hold. As a result, the inequality:
+
+\[
+	a^2 - 4ab + 4b^2 \geq 0
+\]
+\[
+	5a^2 + 5b^2 \geq 4a^2 + 4ab + b^2
+\]
+\[
+	5 (a^2 +b^2) \geq (2a + b)^2
+\]
+\[
+	5 c^2 \geq (2a + b)^2
+\]
+
+has to be true. And since the numbers $a$, $b$, $c \geq 0$, we can square root
+both sides:
+
+\[
+	\sqrt{5} c \geq 2a + b
+\]
+\[
+	\frac{2a + b}{c} \leq \sqrt{5}
+\]
+
+So the inequality has to hold. Q. E. D.
+
+\end{document}

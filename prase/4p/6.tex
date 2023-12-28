@@ -1,0 +1,68 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4p}
+\problem{6} 
+
+\begin{document}
+
+To start with, I will rewrite the inequality to this form:
+
+\[
+	\left| \sum_{k = 1}^n O(k) - \sum_{k = 1}^n E(k) \right| \leq n
+\]
+
+The reason why I rewrote the inequality like this is because we
+can easily get the number of numbers from 1 to $n$ divisible by $k$
+with formula $\left\lfloor n/k \right\rfloor$. As a result,
+the inequality is equivalent to:
+
+\[
+	\left| \sum_{k = 1}^{\left\lceil n/2 \right\rceil} \left\lfloor \frac{n}{2k - 1} \right\rfloor
+	- \sum_{k = 1}^{\left\lceil n/2 \right\rceil} \left\lfloor \frac{n}{2k} \right\rfloor \right| \leq n
+\]
+
+Now we will solve this inequality for two cases -- when the value in the vertical bars
+are positive and when it is negative.
+
+When the value is positive, then:
+
+\[
+	\sum_{k = 1}^{\left\lceil n/2 \right\rceil} \left\lfloor \frac{n}{2k - 1} \right\rfloor
+	\leq n + \sum_{k = 1}^{\left\lceil n/2 \right\rceil} \left\lfloor \frac{n}{2k} \right\rfloor
+\]
+\[
+	\left\lfloor \frac{n}{1} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor + ...
+	\leq n + \left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{4} \right\rfloor
+	+ \left\lfloor \frac{n}{6} \right\rfloor + ...
+\]
+
+Because $n \leq n$, $n/3 \leq n/2$, $n/5 \leq n/4$ etc., this inequality has to hold
+in this case.
+
+When the value is negative, then similarly:
+
+\[
+	\sum_{k = 1}^{\left\lceil n/2 \right\rceil} \left\lfloor \frac{n}{2k} \right\rfloor
+	\leq n + \sum_{k = 1}^{\left\lceil n/2 \right\rceil} \left\lfloor \frac{n}{2k - 1} \right\rfloor
+\]
+\[
+	\left\lfloor \frac{n}{2} \right\rfloor + \left\lfloor \frac{n}{4} \right\rfloor
+	+ \left\lfloor \frac{n}{6} \right\rfloor + ...
+	\leq n +
+	\left\lfloor \frac{n}{1} \right\rfloor + \left\lfloor \frac{n}{3} \right\rfloor
+	+ \left\lfloor \frac{n}{5} \right\rfloor+ ...
+\]
+
+Because $n/2 \leq n$, $n/4 \leq n$, $n/6 \leq n/3$ etc., the inequality holds in
+both cases, so the proof is complete.
+
+
+
+\end{document}
