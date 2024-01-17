@@ -1,0 +1,30 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1j}
+\problem{1} 
+
+\begin{document} 
+
+Příklad takové posloupnosti je posloupnost:
+
+\[
+  1, 4, 1, 1, 4, 1, 1, 4, 1, 1, ..., 4, 1, 1
+\]
+
+Zde je jasně vidět, že jakmile vybereme jakýkoli úsek jedniček, musíme
+pak přičíst čtyřku. A protože každý úsek jedniček má součet menší než tři,
+splňuje podmínku, že žádný úsek nemá součet 3.
+
+Rychle jsme si také schopni zkontrolovat, že má přesně součet, který chceme.
+Součet celé posloupnosti je $337 \cdot 4 + 675 \cdot 1 = 2023$, takže splňuje
+jak délku, tak i součet posloupnosti.
+
+\end{document}

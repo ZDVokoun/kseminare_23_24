@@ -12,12 +12,21 @@
 
 \begin{document}
 
-Suppose we have an triangle that is inside the square. Now we will maximaze
-area of this triangle using this algorithm. For each vertex of the triangle
-we will move it as far from the opposite edge as possible so the altitude
-to the edge increases to its maximum. Because the farthest point to a
-certain edge is always in the farthest corner of the square, the triangle
-with greatest area has all its vertices in three different cornerns of the
-square. Hence, the triangle's area is half of the square's.
+Suppose we have an triangle that is inside the square. Using a few steps,
+we are able to maximize its area by moving its vertices in certain ways.
+
+In a first step, we select any vertex of the triangle and move it so it's
+as far from the opposite edge of the triangle as possible. This way we
+will make the area of the triangle bigger. Because the farthest point from
+an edge of the triangle has to be in one of the corners of the square, we
+will move the vertex to the corner of the square furthest from the edge.
+
+For the second and third vertex of the triangle, we will do the same
+steps (except we will not put any of the vertices of the triangle to
+already used corner of the square). Then, we are not able to make the area
+of the triangle bigger. Hence, it has to be in its maximum. As a result,
+the maximum area of the triangle has to be a half of the square.
+
+Q. E. D.
 
 \end{document}

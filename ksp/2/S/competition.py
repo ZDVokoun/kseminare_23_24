@@ -11,7 +11,7 @@ from sklearn import metrics
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, PolynomialFeatures, StandardScaler
 from sklearn.linear_model import RidgeCV
-from sklearn.pipeline import Pipeline, make_pipeline
+from sklearn.pipeline import Pipeline
 
 
 class Dataset:
@@ -68,7 +68,6 @@ def main(args):
 
     # načtení datasetu
     dataset = Dataset()
-    # print(dataset.train_data[0])
 
     if args.load is None:
         ct = ColumnTransformer(
@@ -79,24 +78,12 @@ def main(args):
             ]
         )
         polytrans = PolynomialFeatures(2, include_bias=False, interaction_only=True)
-        # polytrans = ColumnTransformer(
-        #     [
-        #         (
-        #             "poly",
-        #             PolynomialFeatures(2, include_bias=False, interaction_only=True),
-        #             [0, 1, 2, 3, 4, 5, 6, 7],
-        #         )
-        #     ],
-        #     remainder=PolynomialFeatures(2, include_bias=False, interaction_only=True),
-        # )
 
-        # trans = Pipeline([('c', ct), ('p',polytrans)])
-        # res = trans.fit_transform(dataset.train_data)
         model = Pipeline(
             [
                 ("column", ct),
                 ("poly", polytrans),
-                ("reg", RidgeCV(alphas=np.linspace(32, 34, 10))),
+                ("reg", RidgeCV(alphas=np.linspace(34, 35, 11))),
             ]
         )
         model.fit(dataset.train_data, dataset.train_target)
@@ -109,9 +96,6 @@ def main(args):
         # Poté načtení modelu uděláte takto:
         with lzma.open(args.load, "rb") as model_file:
             model = pickle.load(model_file)
-        # print(model.mean())
-        # print(f"Scaler var: {model.named_steps['column'].named_transformers_['scaler'].var_}")
-        # print(f"Scaler mean: {model.named_steps['column'].named_transformers_['scaler'].mean_}")
         print(f"Best lambda: {model.named_steps['reg'].alpha_}")
         print(
             f"Train RMSE: {metrics.mean_squared_error(dataset.train_target, model.predict(dataset.train_data), squared=False)}"
