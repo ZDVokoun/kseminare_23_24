@@ -11,16 +11,27 @@
 \series{2}
 \problem{1j} 
 
-\begin{document} 
+\begin{document}
 
 Jako první dokážeme, že součástí této posloupnosti jsou mocniny
-prvočísel $p^{\alpha} > 1$. Díky podmínce ze zadání je zřejmé, 
-že posloupnost ${a_n}_{n=1}^{\infty}$ je rostoucí. Proto mocnina
+prvočísel $p^{\alpha} > 1$ (jednička už je součástí posloupnosti,
+proto ta podmínka). Díky podmínce ze zadání je zřejmé,
+že posloupnost $\{a_n\}_{n=1}^{\infty}$ je rostoucí, protože při
+přidání menšího čísla, které nebylo přidáno do posloupnosti,
+se nutně nemůže zvětšit nejmenší společný násobek. Proto mocnina
 prvočísla $p^{\alpha}$, kterou chceme přidat, je nutně větší než všechna
 čísla v posloupnosti. A protože každé číslo menší než $p^{\alpha}$ má
-v prvočíselném rozkladu prvočíslo $p$ v menší mocnině než $\alpha$, 
+v prvočíselném rozkladu prvočíslo $p$ v menší mocnině než $\alpha$,
 splňuje $p^{\alpha}$ podmínku posloupnsti a je nutně její součástí.
 
+Teď ukážeme, že žádná jiná čísla nemohou být součástí posloupnosti.
+Předpokládejme, že můžeme do posloupnosti přidat číslo $x = p_1^{\alpha_1}
+	\cdot p_2^{\alpha_2} \cdots p_k^{\alpha_k}$. Protože každé z čísel
+$p_1^{\alpha_1}$, $p_2^{\alpha_2}$, ..., $p_k^{\alpha_k}$ jsou
+menší než číslo $x$ a jsou součástí posloupnosti (jednička je
+taky součástí posloupnosti), toto číslo nemůže zvětšit nejmenší
+společný násobek všech čísel a tedy není součástí posloupnosti.
 
+Tudíž součástí posloupnosti jsou všechny mocniny prvočísel. Q. E. D.
 
 \end{document}
