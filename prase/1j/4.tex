@@ -1,0 +1,37 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1j}
+\problem{4} 
+
+\begin{document} 
+
+Abychom ukázali, že tato posloupnost je neklesající, stačí nám
+ukázat, že umíme jednosměrně spárovat kombinace, jak poskládat váhu
+$n$, s kombinacemi, jak poskládat váhu $n + 1$. To uděláme tak,
+že ukážeme způsob, jak každou kombinaci vah tvořící váhu $n$
+upravit tak, abychom dostali jedinečnou kombinaci vah tvořící váhu
+$n + 1$.
+
+To zvládneme vcelku jednoduše. Budeme to řešit pro dva různé typy
+kombinací -- ty, který obsahují váhu 1, a ty, který ji naopak neobsahují.
+Pro kombinaci vah, která neobsahují váhu 1, ji získáme jednoduše
+jejím přidáním. Pro kombinaci vah obsahující váhu 1 novou kombinaci
+získáme tak, že váhu 1 odstraníme a místo nejtěžší váhy $m$ v původní
+kombinaci dáme váhu $m + 2$. To můžeme udělat, protože pokud kombinace
+obsahuje váhu 1, pak zároveň obsahuje i další váhy, protože posloupnost
+neobsahuje prvek $a_1$.
+
+Oba způsoby úprav zachovávají všechny potřebné vlastnosti -- všechny
+váhy jsou liché, každá je zastoupena nejvýše jednou a každá kombinace
+je jedinečná. Tím jsme získali platné párování a důkaz je tedy u konce.
+
+
+\end{document}

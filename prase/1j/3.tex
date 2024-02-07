@@ -15,6 +15,17 @@
 Uvažujme jakoukoli posloupnost splňující podmínky ze zadání. Abychom
 ukázali, že posloupnost bude od jistého bodu monotónní, stačí
 nám ukázat, že existuje jen jedna dvojice po sobě jdoucích prvků,
-jejichž monotónní podposloupnosti mají překryv jen jeden prvek.
+jejichž monotónní podposloupnosti mají překryv jen jeden prvek. Pokud
+totiž existuje jen jedna taková dvojice, pak je zřejmé, že posloupnost
+je od jistého bodu monotónní.
+
+Pokud totiž podposloupnost $i$-tého prvku zahrnuje i první prvek,
+pak jediný prvek, který podposloupnost zahrnuje a který následuje
+po $i$-tém prvku, je $i+1$-tý prvek. Proto tedy, když podposloupnost
+$i+1$-tého prvku začíná právě $i+1$-tým prvkem, pak podposloupnost
+tohoto prvku zahrnuje alespoň $i+1$ následujících prvků. Protože to
+samé platí i o podposloupnostech následujících prvků, je tedy překryv
+těchto podposloupností alespoň 2, tím pádem od $i+1$ tého prvku je
+celá posloupnost monotónní, což jsme chtěli ukázat. Q. E. D.
 
 \end{document}

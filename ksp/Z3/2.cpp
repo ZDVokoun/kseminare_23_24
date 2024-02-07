@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <bits/stdc++.h>
 #include <cstdint>
 #define endl '\n'
@@ -11,26 +12,17 @@ typedef vector<bool> vbool;
 typedef pair<int, int> pint;
 typedef pair<ll, ll> pll;
 
-ll toGetRidOf(pll transfer, ll start, ll end, vector<pll> &voluntary) {
-  ll res = INT64_MAX;
-  for (ll i = start; i < end + 1; i++)
-    if (voluntary[i].first > 40 + transfer.first)
-      res = i - start;
-  for (ll i = end; i > start - 1; i++)
-    if (voluntary[i].second < transfer.second - 40)
-      res = min(res, end - i);
-  ll i = start;
-  ll j = start + 1;
-  while (j < end + 1) {
-    if (i == j)
-      j++;
-    if (voluntary[j].first - voluntary[i].second > 40) {
-      res = min(res, i - j - 1);
+int toSkip(int start, int end, vint &voluntaryStart, vint &voluntaryEnd) {
+  int i = start, j = start;
+  int m = INT32_MAX;
+  while (j <= end) {
+    if (voluntaryStart[j] - voluntaryEnd[i] >= 40) {
+      m = min(m, j - i - 1);
       i++;
     } else
       j++;
   }
-  return res;
+  return m;
 }
 
 signed main(int argc, char *argv[]) {
@@ -40,31 +32,41 @@ signed main(int argc, char *argv[]) {
   ll P, V;
   cin >> P >> V;
 
-  vector<tuple<ll, ll, char>> mandatory(P);
-  vector<pll> voluntary(V);
-  for (ll i = 0; i < P; i++)
-    cin >> get<0>(mandatory[i]) >> get<1>(mandatory[i]) >> get<2>(mandatory[i]);
+  vector<pint> transfers;
+  char building = '\0', curBuilding;
+  pint prev, cur;
+  for (ll i = 0; i < P; i++) {
+    cin >> cur.first >> cur.second >> curBuilding;
+    if (building != '\0' && curBuilding != building)
+      transfers.push_back({prev.second, cur.first});
+    prev = cur;
+    building = curBuilding;
+  }
+  vint voluntaryStart(V), voluntaryEnd(V);
   for (ll i = 0; i < V; i++)
-    cin >> voluntary[i].first >> voluntary[i].second;
+    cin >> voluntaryStart[i] >> voluntaryEnd[i];
   ll res = V;
-  vector<pll> transfers;
-  for (ll i = 1; i < P; i++)
-    if (get<2>(mandatory[i - 1]) != get<2>(mandatory[i]))
-      transfers.push_back({get<1>(mandatory[i - 1]), get<0>(mandatory[i])});
-  ll j = 0;
-  ll count = 0;
-  voluntary.push_back({INT64_MAX, INT64_MAX});
-  for (ll i = 0; i < V + 1; i++) {
-    if (voluntary[i].second < transfers[j].first)
+  for (pint transfer : transfers) {
+    int start = lower_bound(voluntaryStart.begin(), voluntaryStart.end(),
+                            transfer.first) -
+                voluntaryStart.begin();
+    int end =
+        lower_bound(voluntaryEnd.begin(), voluntaryEnd.end(), transfer.second) -
+        voluntaryEnd.begin();
+    end--;
+    int fromStart = lower_bound(voluntaryStart.begin(), voluntaryStart.end(),
+                                transfer.first + 40) -
+                    voluntaryStart.begin() - start;
+    int fromEnd = end -
+                  (upper_bound(voluntaryEnd.begin(), voluntaryEnd.end(),
+                               transfer.second - 40) -
+                   voluntaryEnd.begin()) +
+                  1;
+    // cout << start << " " << end << " " << fromStart << " " << fromEnd << nl;
+    if (start > end)
       continue;
-    else if (voluntary[i].first > transfers[j].second) {
-      j++;
-      cout << i - count - 1 << endl;
-      res -= toGetRidOf(transfers[j], i - count - 1, i - 1, voluntary);
-      count = 0;
-      continue;
-    }
-    count++;
+    res -= min(min(fromStart, fromEnd),
+               toSkip(start, end, voluntaryStart, voluntaryEnd));
   }
 
   cout << res << endl;

@@ -1,0 +1,46 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1j}
+\problem{5} 
+
+\begin{document} 
+
+Předpokládejme, že jeden z prvků $v_n = \frac{p}{q}$, kde $p, q$ jsou
+přirozená čísla, pro které platí $\gcd(p, q) = 1$.
+
+Pak po dosazení dostaneme:
+
+\[
+  v_{n+1} = \frac{p}{q} + \frac{2}{\frac{p}{q}} = \frac{p^2 + 2 q^2}{pq}
+\]
+
+Protože číslo 2024 není čtverec, jmenovatel čísla $v_2$ také není čtverec.
+Když se nám tedy povede ukázat, že pokud jmenovatel předchozího členu není
+čtverec, tak ani následující člen nebude mít jmenovatele čtverec, 
+máme důkaz hotový. Pro to však musíme zjistit, jestli zlomek
+výše je v základním tvaru:
+
+\begin{gather*}
+  \gcd(p^2 + 2 q^2, pq) = \gcd(p^2 - 3pq + 2q^2, pq) = \gcd((p - q)(p - 2q), pq) \\
+    = \gcd(p-q, p) \cdot \gcd(p-2q, p) \cdot \gcd(p-q, q) \cdot \gcd(p-2q, q) \\
+    = \gcd(p-2q, p) = \gcd(2q, p) = \gcd(p, 2)
+\end{gather*}
+
+Tedy můžou být jen dva případy -- buď je tento zlomek už v základním tvaru,
+nebo bude vůči zlomku v základním tvaru rozšířen o dvojku. Předpokládejme
+tedy, že $q$ není čtverec. Pokud je zlomek v základním tvaru, je zřejmé,
+že jmenovatel $pq$ nebude čtverec, protože čísla $p, q$ jsou nesoudělná.
+V druhém případě to je podobné -- jmenovatel $pq/2$ nebude čtverec, protože
+$2 \nmid q$, $2 \mid p$ a čísla $p, q$ jsou nesoudělná.
+
+Indukční krok tedy platí, čímž je důkaz u konce.
+
+\end{document}

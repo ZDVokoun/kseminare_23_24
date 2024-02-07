@@ -1,0 +1,72 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{1j}
+\problem{7} 
+
+\begin{document} 
+
+V celém řešení budu používat běžnou definici Fibonacciho posloupnosti
+$\{F_n\}_{n=1}^{\infty}$, kde $F_1 = 1$, $F_2 = 1$ a pro každé přirozené
+$n$ platí $F_{n+2} = F_{n+1} + F_n$. Dále přejmenuji Petrovu posloupnost
+na $\{p_n\}_{n=1}^{\infty}$ a Miškovu na $\{m_n\}_{n=1}^{\infty}$.
+Číslo $n$ v celém textu bude přirozené číslo.
+
+U Petrovi posloupnosti si můžeme všimnout, že $p_n = F_{n+1}$, protože
+oba první členy jsou Fibonacciho čísla ve stejném pořadí jako ve Fibonacciho
+posloupnosti, tím pádem snadnou indukcí ukážeme, že se jedná o posunutou
+Fibonacciho posloupnost:
+
+\[
+  p_{n+2} = p_{n+1} + p_n = F_{n+2} + F_{n+1} = F_{n+3}
+\]
+
+U Miškový posloupnosti je vidět, že se jedná o Lucasovu posloupnosti. A
+jednu vlastnost, která pro Lucasovu posloupnost platí, odvodím a použiji
+k našemu důkazu.
+
+Z výpisu prvních čísel Petrovi a Miškovi posloupnosti si můžeme všimnout,
+že platí $p_{n+3} - m_{n+3} = F_n$, a tedy že platí $m_{n+3} = F_{n+4} - F_n$. 
+pro $m_4 = 4 = 5 - 1$ a $m_5 = 7 = 8 - 1$ to platí a zbytek dokážeme indukcí:
+
+\[
+  m_{n + 5} = F_{n+6} - F_{n+2} = F_{n+5} - F_{n+1} + F_{n+4} - F_{n}
+    = m_{n+4} + m_{n+3}
+\]
+
+Protože víme, že výše uvedená rovnost platí, získali jsme vyjádření Miškovi
+posloupnosti pomocí Fibonacciho čísel, které můžeme dále upravit:
+
+\[
+  m_{n+3} = F_{n+4} - F_n = F_{n+3} + F_{n+2} - F_n = F_{n+3} + F_{n+1}
+\]
+
+Z tohoto vyjádření již snadno dokážeme, že kromě prvních tří čísel
+nejsou žádné další čísla, které Petrova a Miškova posloupnost sdílí.
+Pro číslo $p_{n+3}$ platí:
+
+\[
+  p_{n+3} = F_{n+4} = F_{n + 3} + F_{n+2} > F_{n+3}+F_{n+1} = m_{n+3}
+\]
+
+Proto pro každé přirozené $k \geq n+3$ platí, že $p_k > m_{n+3}$. Když
+zároveň zjistíme vztah čísla $p_{n+2}$ vůči číslu $m_{n+3}$, získáme:
+
+\[
+  p_{n+2} = F_{n+3} < F_{n+3} + F_{n+1} = m_{n+3}
+\]
+
+Tím pádem pro každé přirozené $k \leq n+2$ platí, že $p_k < m_{n+3}$.
+A protože žádné přirozené číslo mezi $n+2$ a $n+3$ neleží, dokázali jsme
+to, že jediná sdílená čísla jsou 1, 2, 3. Q. E. D.
+
+
+
+\end{document}

@@ -1,0 +1,54 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2s}
+\problem{2} 
+
+\begin{document} 
+
+Nechť je počátek komplexní roviny ve středu kružnice opsané sedmiúhelníku,
+která je jednotková, a bod $a = 1$. Jelikož pro orthocentrum trojúhelníku 
+$BCE$ platí $h = b + c + e$ a vrcholy sedmiúhelníku můžeme vyjádřit jako
+mocniny sedmé odmocniny z jedné $\xi$ (pro ujasnění, $\xi = \xi_1
+ = \cos\left(\frac{2\pi}{7}\right) + i \sin\left(\frac{2\pi}{7}\right)$ podle
+značení v seriálu), je tedy $h = \xi + \xi^2 + \xi^4$. Jednu z možných
+hodnot $h$ jsme pak schopni zjistit tak, že zjistíme, jakou kvadratickou
+rovnici $h$ splňuje:
+
+\begin{gather*}
+  h^2 = (\xi + \xi^2 + \xi^4)^2 = \xi^2 + \xi^4 + \xi^8 + 2(\xi \xi^2
+   + \xi \xi^4 + \xi^2 \xi^4) = \xi + \xi^2 + \xi^4 + 2(\xi^3 + \xi^5
+   + \xi^6) \\ = h - 2(1 + \xi + \xi^2 + \xi^4) = h - 2(1 + h) = - h - 2
+\end{gather*}
+\[
+  h^2 + h + 2 = 0
+\]
+
+Tuhle kvadratickou rovnici nám zbývá vyřešit v komplexních číslech:
+
+\[
+  D = 1^2 - 4 \cdot 2 = -7
+\]
+\[
+  h = \frac{-1 \pm \sqrt{-7}}{2} = -\frac{1}{2} \pm i \frac{\sqrt{7}}{2}
+\]
+
+Máme tedy dvě různá řešení, ale protože jsou obě stejně vzdálená od
+bodu $A$, nemusí nás to zajímat a rovnou vypočítáme vzdálenost $|AH|$:
+
+\[
+  |AH| = |h - a| = \sqrt{\frac{9}{4} + \frac{7}{4}} = \sqrt{\frac{16}{4}} = 2
+    = 2r
+\]
+
+Protože jsme kružnici opsanou zvolili na začátku jako jednotkovou, dokázali
+jsme tvrzení ze zadání.
+
+\end{document}

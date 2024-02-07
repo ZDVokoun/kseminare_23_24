@@ -1,0 +1,67 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2s}
+\problem{3} 
+
+\begin{document} 
+
+Nechť je kružnice vepsaná trojúhelníku $ABC$ jednotková kružnice
+komplexní roviny, kde osu $x$ tvoří osa úhlu $\angle CAB$. Pak
+$e = \bar{d}$, $d' = -d$, $e' = -\bar{d}$.
+
+Abychom dokázali kolmost úseček $IM$ a $IQ$, stačí dokázat následující
+rovnost odvozené z věty 35 (vepsiště tvoří počátek):
+
+\[
+  \frac{q}{m} = -\overline{\left(\frac{q}{m}\right)}
+\]
+
+Nechť dotykový bod kružnice vepsané se stranou $BC$ je $F$. Z pozorování
+60 v seriálu jsme schopni vyjádřit bod $Q$ jako:
+
+\[
+  q = \frac{- f^2 (d + \bar{d}) - 2f}{f^2 - 1}
+\]
+
+K vyjádření bodu $M$ dvakrát použiju výsledek ze cvičení 52, a to
+pro vyjádření vrcholů $B$ a $C$:
+
+\[
+  m = \frac{b + c}{2} = \frac{\frac{2fd}{f+d} + \frac{2f\bar{d}}{f+\bar{d}}}{2}
+    = \frac{fd}{f+d} + \frac{f\bar{d}}{f+\bar{d}} 
+    = \frac{fd(f+\bar{d}) + f\bar{d}(f+d)}{(f+d)(f+\bar{d})}
+    = \frac{f^2 (d + \bar{d}) + 2f}{(f+d)(f+\bar{d})}
+\]
+
+Už teď můžeme vidět, že se nám spoustu čitatelé těchto dvou čísel vykrátí,
+takže dostaneme číslo, se kterým lze již celkem dobře pracovat:
+
+\[
+  \frac{q}{m} 
+    = \frac{\frac{- f^2 (d + \bar{d}) - 2f}{f^2 - 1}}{\frac{f^2 (d + \bar{d}) + 2f}{(f+d)(f+\bar{d})}}
+    = - \frac{(f+d)(f+\bar{d})}{f^2 - 1} 
+    = - \frac{f^2 + f(d + \bar{d}) + 1}{f^2 - 1}
+\]
+
+A teď zkusíme k tomuto číslu nalézt číslo komplexně sdružené:
+
+\begin{gather*}
+  \overline{\left(\frac{q}{m}\right)} 
+    = - \frac{\bar{f}^2 + \bar{f}(d + \bar{d}) + 1}{\bar{f}^2 - 1}
+    = - \frac{\frac{1}{f^2} + \frac{d + \bar{d}}{f} + 1}{\frac{1}{f^2} - 1}
+    = - \frac{1}{f^2} \cdot \frac{f^2 + f(d + \bar{d}) + 1}{\frac{1}{f^2} - 1} \\
+    = - \frac{f^2 + f(d + \bar{d}) + 1}{1 - f^2}
+    = \frac{f^2 + f(d + \bar{d}) + 1}{f^2 - 1} = - \frac{q}{m}
+\end{gather*}
+
+Rovnost, kterou jsme chtěli dokázat, tedy platí, čímž je důkaz u konce.
+
+\end{document}
