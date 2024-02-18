@@ -1,0 +1,18 @@
+CS CS lensum CS funkcia CS pop pop
+
+CS CS lensum ++ CS lensum m CS CS lensum CS funkcia CS ++ CS qeq u CS CS
+lensum CS funkcia ++ bitshift CS CS lensum ++ CS lensum m CS CS lensum CS
+funkcia CS ++ CS qeq u CS CS lensum CS funkcia ++ bitshift pop2 CS CS
+lensum ++ CS lensum CS ++ ++ lroll m CS CS lensum CS funkcia ++ CS CS
+funkcia qeq CS CS lensum CS funkcia ++ bitshift pop2 CS CS lensum CS
+funkcia u ++ ++ ++ CS CS CS CS lensum CS funkcia CS ++ CS qeq u CS ++ CS
+lensum CS ++ ++ lroll CS funkcia u CS CS lensum CS funkcia ++ CS ++ ++
+lroll CS CS lensum CS funkcia CS ++ CS qeq u CS CS funkcia u
+
+CS CS lensum CS funkcia ++ CS u
+
+CS CS CS lensum CS funkcia ++ ++ ++ ++ ++ u CS CS lensum CS funkcia ++ CS u
+
+CS CS lensum CS funkcia ++ ++ ++ ++ ++ ++
+
+CS CS lensum CS funkcia ++ CS ++ lroll BRZ pop pop
