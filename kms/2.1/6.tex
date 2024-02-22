@@ -1,0 +1,114 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2-1}
+\problem{6} 
+
+\begin{document} 
+
+Z pozorování si můžeme všimnout, že po každém rozšíření je v posloupnosti
+vždy jedna devítka a pak každé číslo přibyde v posloupnosti o tolik,
+kolik bylo čísel větších než toto číslo před rozšířením. To můžeme
+vyjádřit soustavou rekurentních vztahů (počítám prvky od jedničky):
+
+\begin{gather*}
+  a_n = 1 \\
+  b_1 = 1 \qquad b_n = b_{n - 1} + a_{n - 1} \\
+  c_1 = 1 \qquad c_n = c_{n - 1} + b_{n - 1} + a_{n - 1} \\
+  d_1 = 1 \qquad d_n = d_{n - 1} + c_{n - 1} + b_{n - 1} + a_{n - 1} \\
+  e_1 = 1 \qquad e_n = e_{n - 1} + d_{n - 1} + c_{n - 1} + b_{n - 1} + a_{n - 1} \\
+  f_1 = 1 \qquad f_n = f_{n - 1} + e_{n - 1} + d_{n - 1} + c_{n - 1} + b_{n - 1} + a_{n - 1} \\
+  g_1 = 1 \qquad g_n = g_{n - 1} + f_{n - 1} + e_{n - 1} + d_{n - 1} + c_{n - 1} + b_{n - 1} + a_{n - 1} \\
+  h_1 = 1 \qquad h_n = h_{n - 1} + g_{n - 1} + f_{n - 1} + e_{n - 1} + d_{n - 1} + c_{n - 1} + b_{n - 1} + a_{n - 1} \\
+  i_1 = 1 \qquad i_n = i_{n - 1} + h_{n - 1} + g_{n - 1} + f_{n - 1} + e_{n - 1} + d_{n - 1} + c_{n - 1} + b_{n - 1} + a_{n - 1} \\
+\end{gather*}
+
+Tyto vztahy lze pak zjednodušit na:
+
+\begin{gather*}
+  a_n = 1 \\
+  b_1 = 1 \qquad b_n = b_{n - 1} + a_{n} \\
+  c_1 = 1 \qquad c_n = c_{n - 1} + b_{n} \\
+  d_1 = 1 \qquad d_n = d_{n - 1} + c_{n} \\
+  e_1 = 1 \qquad e_n = e_{n - 1} + d_{n} \\
+  f_1 = 1 \qquad f_n = f_{n - 1} + e_{n} \\
+  g_1 = 1 \qquad g_n = g_{n - 1} + f_{n} \\
+  h_1 = 1 \qquad h_n = h_{n - 1} + g_{n} \\
+  i_1 = 1 \qquad i_n = i_{n - 1} + h_{n} \\
+\end{gather*}
+
+Tudíž pro získání explicitního vyjádření se zdá, že budeme muset vyřešit
+spoustu sum. Pokud však prvky posloupností zapíšeme pomocí kombinačních
+čísel, dost si zjednoduššíme práci:
+
+\[
+  b_n = \binom{0}{0} + \binom{1}{0} + ... + \binom{n - 1}{0} = \binom{n}{1}
+\]
+\[
+  c_n = \binom{1}{1} + \binom{2}{1} + ... + \binom{n}{1} = \binom{n + 1}{2}
+\]
+
+Tudíž nás může napadnout, jestli dál $d_n = \binom{n + 2}{3}$ atd. Zobecněný
+tvar tohoto vzorce dokážu indukcí, tedy budu chtít dokázat, že:
+
+\[
+  \sum_{i=1}^n \binom{i + k - 1}{k} = \binom{n + k}{k + 1}
+\]
+
+Pro první sumy už jsem to ukázal, takže nám zbývá dokázat indukční krok.
+Nejprve si však sumu nalevo zapíšu vzestupně:
+
+\[
+  \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + ... + \binom{n + k - 1}{k}
+\]
+
+Teď dosadíme $\binom{k}{k} = \binom{k + 1}{k + 1}$. Protože obecně pro
+kombinační čísla platí $\binom{n}{k} + \binom{n}{k + 1} = \binom{n + 1}{k + 1}$
+(vztah, který umožňuje sestrojení Pascalova trojúhelníku), za součet prvních
+dvou členů můžeme dosadit $\binom{k + 2}{k + 1}$:
+
+\[
+  \binom{k + 2}{k + 1} + \binom{k + 2}{k} + \binom{k + 3}{k} + ... + \binom{n + k - 1}{k}
+\]
+
+Můžeme tedy pozorovat, že tento vztah můžeme používat opakovaně do té
+doby, dokud nezískáme konečnou sumu, tedy platí:
+
+\[
+  \sum_{i=1}^n \binom{i + k - 1}{k} = \binom{n + k - 1}{k + 1} + \binom{n + k - 1}{k}
+    = \binom{n + k}{k + 1}
+\]
+
+Což jsme chtěli dokázat. Teď pro počet jedniček potřebujeme získat správné
+$k$. Protože jsme pro devítku používali $k = 0$, pak tedy pro počet jedniček
+je $k = 8$, proto:
+
+\[
+  i_n = \binom{n + 7}{8}
+\]
+
+A protože tato posloupnost začíná od jedničky, počet jedniček po $n$-tém
+rozšíření je:
+
+\[
+  \binom{n + 8}{8}
+\]
+
+Z rekurzivního vztahu pro počet jedniček zároveň víme, že délka celé
+posloupnosti po $n$-tém rozšíření je stejný jako počet jedniček
+po $n + 1$-tém rozšíření, a proto délka celé posloupnosti bude:
+
+\[
+  \binom{n + 9}{8}
+\]
+
+Tím jsme získali vše, co jsme chtěli.
+
+\end{document}

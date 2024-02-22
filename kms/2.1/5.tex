@@ -1,0 +1,55 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2-1}
+\problem{5} 
+
+\begin{document} 
+
+Je zřejmé, že pokud $a^2 + k \mid (a - 1) a (a + 1)$, pak platí:
+
+\[
+  (a - 1) a (a + 1) \equiv 0 \pmod{a^2 + k}
+\]
+
+Tuto kongruenci můžeme dále upravit:
+
+\[
+  (a - 1) a (a + 1) \equiv (a - 1) (a^2 + a) \equiv (a - 1) (a - k) \equiv
+  a^2 + k - ak - a \equiv -(ak + a) \equiv 0 \pmod {a^2 + k}
+\]
+
+Tudíž musí zároveň platit, že $a^2 + k \mid ak + a$. Protože čísla
+$a$, $k$ jsou kladná celá čísla, musí platit:
+
+\[
+  ak + a \geq a^2 + k
+\]
+
+Jinak by podmínka $a^2 + k \mid ak + a$ nemohla platit. Nerovnost následně 
+upravíme:
+
+\[
+  ak - k \geq a^2 - a
+\]
+\[
+  (a - 1) k \geq (a - 1) a
+\]
+
+Poněvadž v případě $a = 1$ dokazovaná nerovnost $k \geq a$ bude vždy splněna,
+můžeme pokrátit a dostáváme:
+
+\[
+  k \geq a
+\]
+
+Což jsme chtěli dokázat. Tím je důkaz u konce.
+
+\end{document}

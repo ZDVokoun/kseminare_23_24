@@ -1,0 +1,68 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2-1}
+\problem{4} 
+
+\begin{document} 
+
+Nejprve dokážeme, že $n \geq a(n)$. Víme, že každé $n$ můžeme zapsat
+jako:
+
+\[
+  x_0 \cdot 10^0 + x_1 \cdot 10^1 + \dots + x_k \cdot 10^k \text{,}
+\]
+
+kde každé $x_i$ jsou cifry čísla. Protože pracujeme v desítkové
+soustavě, nerovnost ze zadání můžeme zapsat jako:
+
+\[
+  x_0 \cdot 10^0 + x_1 \cdot 10^1 + \dots + x_k \cdot 10^k 
+    \geq x_0 \cdot x_1 \cdots x_k
+\]
+
+Tuto nerovnost nebudeme řešit napřímo, protože jsme schopni jednoduše
+dokázat, že:
+
+\[
+  x_k \cdot 10^k \geq x_0 \cdot x_1 \cdots x_k
+\]
+
+Víme, že pro každé $x_i$ platí $0 \geq x_i \geq 9$, tím pádem také vždy platí,
+že $x_i < 10$. Z toho je už zřejmé, že nerovnost výše platí, protože na pravé
+straně je jen $k + 1$ čitatelů.
+
+A protože je zřejmé, že:
+
+\[
+  x_0 \cdot 10^0 + x_1 \cdot 10^1 + \dots + x_k \cdot 10^k \geq x_k \cdot 10^k
+\]
+
+Nerovnost $n \geq a(n)$ nutně platí.
+
+Teď vyřešíme kvadratickou rovnici ze zadání. Víme, že musí platit nerovnost
+$0 \leq a(n) \leq n$ (cifry jsou vždy nezáporný), a tedy získáme nerovnice:
+
+\[
+  n^2 - 17n + 56 \geq 0
+\]
+\[
+  n^2 - 18n + 56 \leq 0
+\]
+
+Celočíselná řešení první nerovnice jsou 
+$\mathbb{Z} \, \cap \, (- \infty; 4 \rangle \, \cap \, \langle 13; + \infty)$ a 
+druhé nerovnice jsou $\mathbb{Z} \, \cap \, \langle 4 ; 14 \rangle$. Tím se
+nám zúží počet možných řešení na \{4, 13, 14\}. Po vyzkoušení těchto hodnot
+najdeme jen jediné řešení, a to $n = 4$.
+
+Tím je řešení u konce.
+
+\end{document}

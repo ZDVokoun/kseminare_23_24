@@ -1,0 +1,30 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2-1}
+\problem{9} 
+
+\begin{document} 
+
+Můžeme si všimnout jedné zajímavé věci na této posloupnosti -- když
+dosadíme $a_{n+1} = 2024 / a_n$, získáme:
+
+\[
+  a_{n+2} = \frac{a_n + 2024}{1 + \frac{2024}{a_n}} = a_n
+\]
+
+Tudíž když si vybereme taková celá $a_1$ a $a_2$, aby splňovali
+podmínku výše, máme jistotu, že celá posloupnost bude z celých čísel.
+To čísla $44 + 46 = 90$ splňují. Aby existovala menší taková hodnota,
+muselo by v jednom okamžiku dojít k tomu, že by čísla celá čísla
+$a_{n}$ a $a_{n+1}$ platilo $a_{n+1} = 2024 / a_n$. K tomu však nemůže
+dojít, tudíž tohle je jediné řešení.
+
+\end{document}

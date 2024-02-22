@@ -1,0 +1,38 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3}
+\problem{3} 
+
+\begin{document} 
+
+Nejdříve si musíme uvědomit, že čím více máme hromádek, tím kyselina
+odstraní víc věcí, tedy ze začátku se vyplatí nejprve dělit hromady
+a pak až používat kyselinu na zneškodnění všech hromad. A protože
+počet použití kyseliny závisí jen na nejvyšší hromadě, která zůstala
+po dělení hromad na menší hromady, jeden z možných algoritmů nalezajících
+řešení je následující.
+
+Pro každou hromadu o výšce $v_i$ zjistíme, kolik operací potřebujeme
+k tomu, abychom rozdělili všechny hromádky na hromádky o výšce nejvýše
+$v_i$ a pak tyto hromady zničili kyselinou. Jejich počet určíme pomocí
+tohoto vzorce:
+
+\[
+  \left\lceil \frac{v_1}{v_i} - 1 \right\rceil
+    + \left\lceil \frac{v_2}{v_i} - 1 \right\rceil + ...
+    + \left\lceil \frac{v_N}{v_i} - 1 \right\rceil + v_i
+\]
+
+Když tohle vyzkoušíme pro každou hromadu a najdeme minimum, nalezneme
+optimální řešení v čase $\mathcal{O}(N^2)$, protože vyhodnocení tohoto
+vzorce trvá $\mathcal{O}(N)$ času.
+
+\end{document}
