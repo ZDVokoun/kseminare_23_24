@@ -1,0 +1,26 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2j}
+\problem{1} 
+
+\begin{document}
+
+Počet účastníku, se kterými se Lenka kamarádí, zjistíme snadno. Ten účastník,
+který se kamarádí s 23 účastníky, se kamarádí se všemi. Tudíž se kamarádí
+jak s Lenkou, tak i s účastníkem, který má jen jednoho kamaráda. Tedy jakmile
+odstraníme vrchol účastníka s 23 kamarády a vrchol s jedním kamarádem, dostaneme
+podobný případ, ale teď budeme řadit 21 účastníků.
+
+Tento postup, kdy odstraníme účastníka s nejvíce kamarády a účastníka s jedním
+kamarádem, opakujeme do té doby, než nám zbyde jediný účastník, který se
+nutně kamarádí s Lenkou. Tedy počet účastníků, se kterými se Lenka kamarádí,
+je 12 (výsledek dostaneme jako $\lfloor 23/2 \rfloor + 1$).
+
+\end{document}

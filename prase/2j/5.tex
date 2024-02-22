@@ -1,0 +1,37 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{2j}
+\problem{5} 
+
+\begin{document}
+
+Po celý důkaz bude skupinka přátel označovat souvislou komponentu grafu prasátek,
+kde hrany označují, že jsou dané prasátka přátelé. Teď ukážu, že skupinka přátel
+musí tvořit úplný podgraf grafu přátelství.
+
+Pro skupinku přátel s jedním a se dvěma prasátky je zřejmé, že skupinka přátel
+tvoří úplný podgraf. Pak předpokládajme, že skupinka $n$ přátel tvoří úplný
+podgraf. Pak pokud budeme chtít přidat další prasátko do skupinky přátelství,
+musí jeden z prasátek v skupince přátel se kamarádit s tímto dalším prasátkem.
+Ale pak se s ním musí kamarádit i zbytek skupinky přátel, protože nepřítel
+přítele je nepřítel. Proto i skupinka $n+1$ přátel je také úplný podgraf,
+což jsme chtěli.
+
+Ještě potřebujeme ukázat, že každá skupinka přátel musí být stejně velká,
+abychom splnili podmínku, že každý má 2024 nepřátel. To lze jednoduše ukázat
+-- pokud by existovaly dvě skupinky přátel, které mají rozdílný počet prasátek,
+pak prasátka v těchto skupinkách mají rozdílný počet nepřátel. Tehdy však
+nemůžeme splnit podmínku, že každý má 2024 nepřátel, čímž jsme došli ke sporu.
+
+Tím pádem $n$ může být jen takové, kdy jsou splněny dokázané podmínky výše a
+podmínka, že každý má 2024 nepřátel. To splňují všechna čísla $n = 2024 + k$,
+kde $k \mid 2024$. Všechny ostatní čísla nemohou tyto podmínky splnit.
+
+\end{document}
