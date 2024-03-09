@@ -1,0 +1,86 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{FO-B-S}
+\problem{7} 
+
+\begin{document} 
+
+Protože je sestava kola na hřídeli složena ze dvou válců se stejnou
+osou otáčení, pro zjištění momentu setrvačnosti $J$ sestavy sečteme
+momenty setrvačnosti jednotlivých válců. Nejprve však musíme zjistit,
+jak je rozdělena hmotnost mezi kolem a hřídelem:
+
+\[
+  \frac{m_k}{m_h} = \frac{V_k}{V_h} = \frac{\pi (2r)^2 \cdot r}{\pi r^2 \cdot 3r}
+    = \frac{4}{3}
+\]
+
+Tím pádem moment setrvačnosti sestavy bude:
+
+\[
+  J = \frac{1}{2} \cdot \frac{4}{7} M \cdot (2r)^2 + \frac{1}{2} \cdot \frac{3}{7} M \cdot r^2
+    = \frac{1}{2} M r^2 \cdot \frac{16 + 3}{7} = \frac{19}{14} M r^2
+\]
+
+Pro získání velikosti zrychlení $a$ formulujeme soustavu rovnic
+skládající se z druhé impulzové věty a závislosti úhlového zrychlení
+na zrychlení tělesa:
+
+\[
+  J \epsilon = F_{G0} \cdot 2r
+\]
+\[
+  a = \epsilon \cdot 2r
+\]
+
+Když první rovnici dosadíme do druhé, získáme výsledek:
+
+\[
+  a = \epsilon \cdot 2r = \frac{F_{G0} \cdot 2r}{J} \cdot 2r
+    = \frac{4 m_0 g \cdot r^2}{J} = \frac{56 m_0 g}{19 M}
+\]
+
+Pro další část úlohy musíme zjistit, jaké závaží bylo zavěšené na hřídeli.
+To zjistíme z rovnováhy momentů sil:
+
+\[
+  m_0 g \cdot 2r = m_1 g \cdot r \implies m_1 = 2 m_0
+\]
+
+Teď formulujeme podobnou soustavu rovnic jako v předchozí části (jako
+kladný směr uvažuji takový směr, že závaží na kole zrychluje dolů):
+
+\[
+  J \epsilon = 2 m_0 g \cdot 2r - m_0 g \cdot r = 3 m_0 g r
+\]
+
+\[
+  a_k = \epsilon \cdot 2r
+\]
+
+\[
+  a_h = \epsilon \cdot r
+\]
+
+Oba zrychlení získáme analogicky jako v předchozí části:
+
+\[
+  a_k = \frac{3 m_0 g r}{J} \cdot 2r = \frac{6 m_0 g \cdot r^2}{J} 
+      = \frac{84 m_0 g}{19 M}
+\]
+\[
+  a_h = \frac{3 m_0 g r}{J} \cdot r = \frac{3 m_0 g \cdot r^2}{J}
+      = \frac{42 m_0 g}{19 M}
+\]
+
+Tím je řešení u konce.
+
+\end{document}
