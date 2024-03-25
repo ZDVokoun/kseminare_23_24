@@ -1,0 +1,32 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{36-4}
+\problem{1} 
+
+\begin{document} 
+
+Ze zadání víme, že zadaný graf je DAG. Dále si potřebujeme uvědomit,
+že úkoly, kde jakkoli malé zpoždění způsobí zpoždění celé práce, jsou
+ty úkoly, které se nachází na té nejdelší cestě v celém grafu, proto
+naším úkolem je najít nejdelší cestu v DAG. To je známý problém,
+pro který lze najít řešení v lineárním čase.
+
+Jako první celý graf topologicky seřadíme. Pak postupně v tomto
+řazení aktualizujeme každému synu aktuálně zpracovávanému vrcholu
+nejdelší vzdálenost od kořene a odkaz na vrchol, který v nejdelší cestě
+do tohoto vrcholu předcházel, což nám umožní zrekonstruovat celou cestu v lineárním čase.
+Když pak najdeme vrcholy, který jsou nejdál od kořene, stačí z těchto vrcholů
+zrekonstruovat nejdelší cestu a vrátit vrcholy, které na ní leží.
+
+Celý tento algoritmus běží v čase $\mathcal{O}(n)$ a má prostorovou
+složitost $\mathcal{O}(n)$.
+
+\end{document}

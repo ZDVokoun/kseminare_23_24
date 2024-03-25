@@ -1,0 +1,38 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3j}
+\problem{5} 
+
+\begin{document} 
+
+Nechť jsou $M_a$ a $M_b$ množina matfyzaček, se kterými tancoval
+matfyzák $a$ a se kterými tancoval matfyzák $b$. Aby platilo,
+že pro tuto dvojici neexistují matfyzačky $\alpha$ a $\beta$, pro které
+platí podmínka v zadání, musí platit, že:
+
+\[
+  (M_a \setminus M_b = \emptyset) \lor (M_b \setminus M_a = \emptyset)
+\]
+
+Výrok výše platí, když jedna z množin $M_a$ a $M_b$ je podmnožina té druhé.
+Proto pokud pro žádnou dvojici matfyzáků neexistuje dvojice matfyzaček,
+kterou hledáme, umíme seřadit matfyzáky tak, že bude pro ně platit:
+
+\[
+  M_1 \subseteq M_2 \subseteq ... \subseteq M_n
+\]
+
+A poněvadž víme, že každá matfyzačka tancovala s alespoň jedním matfyzákem,
+musel by $n$-tý matfyzák tancovat se všemi matfyzačkami. To je ale spor.
+
+Tím je důkaz u konce.
+
+\end{document}

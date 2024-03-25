@@ -1,0 +1,45 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3j}
+\problem{4} 
+
+\begin{document} 
+
+Nejprve uvažujme, že máme balíček $n$ karet splňující podmínky ze
+zadání a že chceme tento balíček upravit tak, abychom dostali $n + 1$
+karet splňující zadání. Jako první musíme splnit podmínku, že na každý
+kartě musí být $n + 1$ symbolů. Protože už v tomto balíčku platí, že každé
+dvě karty sdílí právě jeden symbol, nezbývá nám, než na každou kartu
+přidat další symbol, čímž vytvoříme celkem $n$ nových symbolů. Jakmile
+pak chceme přidat novou kartu, na tuto novou kartu přidáme těch $n$ nově
+vytvořených symbolů, což můžeme, protože tyto nové symboly jsou pro každou kartu
+původního balíčku jedinečné. Následně vytvoříme nový symbol, abychom 
+doplnili počet symbolů na této kartě do $n + 1$. Po tomto kroku
+jsme splnili všechny podmínky.
+
+Tím pádem abychom rozšířili
+balíček $n$ karet na $n + 1$ karet, musíme přidat alespoň $n + 1$ symbolů.
+Tento vztah můžeme vyjádřit rekurentně:
+
+\[
+  s(n + 1) = s(n) + n + 1
+\]
+
+Zbývá nám tedy se ujistit, že $s(1) = 1$, což zřejmě platí, a zjistíme,
+že explicitní vyjádření tohoto vztahu je známý vztah:
+
+\[
+  s(n) = \frac{1}{2} n (n + 1)
+\]
+
+Tento vztah tedy určuje optimální počet symbolů na balíčku $n$ karet.
+
+\end{document}
