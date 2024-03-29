@@ -1,0 +1,64 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3s}
+\problem{2} 
+
+\begin{document} 
+
+Z cvičení 72 víme, že rovnice tečen kružnice opsané procházející body
+$A$, $B$, $C$ jsou postupně:
+
+\[
+  b^2 z + c^2 y = 0
+\]
+\[
+  a^2 z + c^2 x = 0
+\]
+\[
+  a^2 y + b^2 x = 0
+\]
+
+Při vyřešení soustav rovnic tečen v bodech $A$, $B$ a tečen v bodech
+$A$, $C$ dostaneme, že $L_b = (a^2 : -b^2 : c^2)$ a $L_c = (a^2 : b^2 : -c^2)$.
+Z úlohy 49 pak víme, že $I_b = (a : -b : c)$ a $I_c = (a : b : -c)$. Obecné
+rovnice přímek $L_bI_b$ a $L_cI_c$ jsou postupně:
+
+\[
+  (b - c) x + \frac{a (c - a)}{b} y - \frac{a (a - b)}{c} z = 0
+\]
+\[
+  (b - c) x + \frac{a (a - c)}{b} y + \frac{a (a - b)}{c} z = 0
+\]
+
+Podle věty 57 si pak pomocí determinantu matice níže ověříme, zda přímky
+$L_bI_b$, $L_cI_c$ a $BC$ procházejí jedním bodem:
+
+\[
+\begin{vmatrix}
+  (b - c) & \frac{a (c - a)}{b} & -\frac{a (a - b)}{c} \\
+  (b - c) & \frac{a (a - c)}{b} & \frac{a (a - b)}{c} \\
+  1 & 0 & 0
+\end{vmatrix} = 
+\begin{vmatrix}
+  (b - c) & \frac{a (c - a)}{b} & - \frac{a (a - b)}{c} \\
+  2(b - c) & 0 & 0 \\
+  1 & 0 & 0
+\end{vmatrix} = 
+\begin{vmatrix}
+  0 & \frac{a (c - a)}{b} & - \frac{a (a - b)}{c} \\
+  1 & 0 & 0 \\
+  0 & 0 & 0
+\end{vmatrix} = 0
+\]
+
+Tedy přímky procházejí jedním bodem, což jsme chtěli ukázat.
+
+\end{document}

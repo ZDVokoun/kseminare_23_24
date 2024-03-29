@@ -1,0 +1,36 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3s}
+\problem{3} 
+
+\begin{document} 
+
+Souřadnice bodů $X$ a $Y$ označíme jako $X = (x_1 : x_2 : 0)$ a $Y = (y_1 : 0 : y_2)$.
+Pak rovnice přímek $CX$ a $BY$ jsou:
+
+\[
+  x_2 x - x_1 y = 0
+\]
+\[
+  y_2 x - y_1 z = 0
+\]
+
+Pro body $P = (p_1, p_2, p_3)$, $Q = (q_1, q_2, q_3)$ platí, že $p_1 = q_1 = k$,
+$k > 0$, $k < x_1$ a $k < y_1$. Pak
+jsou body $P = \left(k, \frac{x_2 k}{x_1}, 1 - k - \frac{x_2 k}{x_1}\right)$
+a $Q = \left(k, 1 - k - \frac{y_2 k}{y_1}, \frac{y_2 k}{y_1}\right)$.
+
+% https://www.wolframalpha.com/input?i=solve+k*u+%2B+x_2%2Fx_1+*+k+*+v+%2B+%281+-+k+-+x_2%2Fx_1+*+k%29+*+w+%3D+0%2C+y_1+*+u+%2B+y_2+*+w+%3D+0%2C+u+%3D+k+*+x_2+*+y_2+for+u%2C+v%2C+w
+% https://www.wolframalpha.com/input?i=solve+k*u+%2B+%281+-+k+-+y_2+*k%2Fy_1%29+*+v+%2B+y_2+*+k%2Fy_1+*+w+%3D+0%2C+x_1+*+u+%2B+x_2+*+v+%3D+0%2C+u+%3D+k+x_2+y_2+for+u%2C+v%2C+w
+% https://www.wolframalpha.com/input?i=solve+-k+x_1+y_2+*+y+%3D+%28x_1+%28-%28k+-+1%29+y_1+-+k+y_2%29+-+k+x_2+y_1%29+*+z%2C+y%2Bz%3D1+for+y%2C+z
+% https://www.wolframalpha.com/input?i=solve+%28x_1+%28-%28k+-+1%29+y_1+-+k+y_2%29+-+k+x_2+y_1+%29*y%3D+-k+*+x_2+*+y_1*z%2C+y+%2B+z+%3D+1+for+y%2Cz
+
+\end{document}
