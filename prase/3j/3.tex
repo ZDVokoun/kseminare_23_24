@@ -1,0 +1,41 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{3j}
+\problem{3} 
+
+\begin{document}
+
+Áďa může označit políčka tak, aby Ben nezvládl projít mezi
+stejně označenými políčky. Pro $n = 16$ může Áďa vyplnit tabulku
+takto:
+
+\begin{table}[h!]
+	\label{tab:1}
+	\centering
+	\begin{tabular}[c]{|c|c|c|c|c|c|}
+		\hline
+		   & 13 & 14 & 15 & 16 &   \\
+		\hline
+		12 & 1  & 2  & 3  & 4  & 1 \\
+		\hline
+		11 & 5  & 6  & 7  & 8  & 2 \\
+		\hline
+		10 & 9  & 10 & 11 & 12 & 3 \\
+		\hline
+		9  & 13 & 14 & 15 & 16 & 4 \\
+		\hline
+		   & 8  & 7  & 6  & 5  &   \\
+		\hline
+	\end{tabular}
+	\caption{Řešení pro $n = 16$}
+\end{table}
+
+
+\end{document}

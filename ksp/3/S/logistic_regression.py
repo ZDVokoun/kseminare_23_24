@@ -43,7 +43,7 @@ def main(args: argparse.Namespace):
         data, target, test_size=args.test_size, random_state=args.seed
     )
 
-        # Vytvoření náhodných vah
+    # Vytvoření náhodných vah
     weights = generator.uniform(size=train_data.shape[1], low=-0.1, high=0.1)
 
     for epoch in range(args.epochs):
