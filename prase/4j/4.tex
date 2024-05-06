@@ -1,0 +1,52 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4j}
+\problem{4} 
+
+\begin{document}
+
+\section{Část a}
+
+Jako první provedeme substituci $x = -y$. Tím pak dostaneme nerovnost:
+
+\[
+	y^{2n} + y^{2n - 1} + \dots + y + 1 > \frac{1}{2}
+\]
+
+Tato nerovnice zřejmě platí pro všechna $y \geq 0$. Díky tomu můžeme provést
+úpravu:
+
+\[
+	\frac{y^{2n + 1} - 1}{y - 1} > \frac{1}{2}
+\]
+\[
+	\frac{2y^{2n + 1} - 2 - y + 1}{y - 1} > 0
+\]
+\[
+	\frac{2y^{2n + 1} - y - 1}{y - 1} > 0
+\]
+
+Pokud předpokládáme, že $y < 0$, pak platí:
+
+\[
+	2y^{2n + 1} - y - 1 < 0
+\]
+\[
+	y (2y^{2n} - 1) < 1
+\]
+
+Pro $y \leq - \sqrt[2n]{\frac{1}{2}}$ je levá strana nerovnosti je záporná, tím
+pádem nerovnost zřejmě platí. A protože $\sqrt[2n]{\frac{1}{2}} < 1$, musí tato
+nerovnost též platit v intervalu $\left\langle - \sqrt[2n]{\frac{1}{2}}; 0 \right)$,
+jelikož oba činitele na levé straně budou v tomto intervalu menší než 1.
+Proto tedy tato nerovnost platí pro všechna reálná čísla. Tím jsme tuto nerovnost
+dokázali.
+
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4j}
+\problem{5} 
+
+\begin{document}
+
+\section{Část a}
+
+Protože všechna přirozená čísla jsou rozdělena do aritmetických posloupností,
+pak je v nějaké z těchto posloupností zahrnut součin diferencí $d_1 d_2 \cdots
+	d_n$. Nechť je tedy zahrnut v posloupnosti $a_n$ a $a_k = d_1 d_2 \cdots d_n$.
+Pokud diference této posloupnosti je $d_l$, pak
+$a_k \equiv a_k + i d_l \equiv 0 \mod{d_l}$, tedy veškeré čísla této posloupnosti
+jsou dělitelná její diferencí, tudíž i její první člen je dělitelný její diferencí.
+Tím je důkaz u konce.
+
+\section{Část b}
+
+Jako první si ukážeme, že pokud má nějaký pár z posloupností nesoudělné diference,
+pak nemůže být splněna druhá podmínka. Na to nám stačí formulovat soustavu kongruencí,
+která musí pro číslo $x$, které se bude nacházet v obou posloupnostech, platit:
+
+\[
+	x \equiv a_1 \mod{d_a}
+\]
+\[
+	x \equiv b_1 \mod{d_b}
+\]
+
+Čínská zbytková věta nám pak říká, že tato soustava kongruencí má nekonečně mnoho
+řešení, pokud jsou čísla $d_a$ a $d_b$ jsou nesoudělná. Proto pokud chceme, aby
+tato soustava neměla řešení, musí být diference $d_a$ a $d_b$ nutně soudělná.
+
+Z první podmínky následně nutně musí platit, že od určitého čísla musí být v posloupnostech
+zahrnuta všechna čísla. Tím pádem v nějaké posloupnosti se musí nacházet nějaký
+násobek součinu diferencí všech posloupností $k \cdot d_1 d_2 \cdots d_{2023}$.
+Z části \textit{a} již víme, že všechny členy té posloupnosti, která obsahuje toto číslo,
+jsou dělitelná její diferencí. Proto aby platila třetí podmínka, musí být jak první
+číslo, tak diference, určité prvočíslo větší než 2023. Aby však platila druhá
+podmínka, musí být všechny diference soudělné a tedy být násobkem tohoto prvočísla.
+
+Teď už můžeme sporem ukázat, že pak nemůže platit první podmínka. Tehdy totiž
+nejmenší diference bude rovna tomuto prvočíslu větší než 2023, ale protože máme
+jen 2023 posloupností, nemůžeme nikdy do těchto posloupností zahrnout
+všechna čísla mezi dvěma členy posloupnosti s nejmenší diferencí, protože jejich
+počet bude větší než 2022. To tedy rozporuje s předpokladem, že platí první
+podmínka, tedy tyto posloupnosti nemůžou existovat.
+
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{4j}
+\problem{1} 
+
+\begin{document}
+
+\section{Část a}
+
+Abychom vždy tipli více než polovinu správně stačí nám následující
+strategie. Víme, že máme úplný graf hráčů a víme, jaký stupně mají
+hráči v podgrafu výher. V každém kroku si vybereme jakéhokoli
+hráče $v$ s počtem výher $w_v$. Pak budeme jednat následovně:
+
+\begin{itemize}
+	\item Pokud $w_v < \frac{n - 1}{2}$,
+	      pak bude pro všechny hry hráče $v$ tipovat prohru.
+	\item Pokud $w_v > \frac{n - 1}{2}$,
+	      pak bude pro všechny hry hráče $v$ tipovat výhru.
+	\item Pokud $w_v = \frac{n - 1}{2}$, pak buď bude tipovat pro
+	      všechny hry hráče $v$ výhru, nebo prohru. Nemůže tipovat oboje
+	      zároveň.
+	\item Jakmile se zeptáme na všechny hry hráče $v$, odstraníme
+	      hráče $v$ a jeho hrany z úplného grafu a aktualizujeme počet
+	      výher ostatních hráčů podle Samových odpovědí. Tím získáme
+	      úplný graf o počtu hráčů $n - 1$ a strategii opakujeme, dokud
+	      $n = 1$.
+\end{itemize}
+
+Je zřejmé, že pokud máme počet hráčů $n$ sudý, nemůže nastat podmínka
+$w_v = \frac{n - 1}{2}$, tím pádem v kroku, kdy je počet hráčů sudý, musíme
+tipnout více než polovinu správně. Pro liché $n$ tipneme alespoň polovinu
+správně. To však nevadí, protože pro každý graf o počtu grafů $n \geq 2$
+získáme alespoň v jednom kroku sudý počet hráčů, tím pádem nutně počet správně
+tipnutých odpovědí je více než polovina. Tím je důkaz u konce.
+
+
+\end{document}
