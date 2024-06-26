@@ -1,0 +1,21 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{36.5}
+\problem{4} 
+
+\begin{document}
+
+Protože každé město má právě jednu výstupní hranu, vyplývá z toho, že je jen jedna cesta z Benátek nebo z Milánu a že jakmile se Adam a Kačka setkají, půjdou už nutně stejnou cestou. Můj algoritmus je tedy následující.
+
+Jako první zjistíme vzdálenost Benátek od Říma a Milánu od Říma. Poněvadž od prvního společného bodu půjdou stejnou cestou, platí $|R_b - R_m| = |S_b - S_m|$. Díky tomu si pomůžeme hledání prvního společného města tím, že necháme jednoho z nich ujít takovou vzdálenost, aby oba byli stejně vzdáleni od prvního společného bodu. Pak nám stačí střídavě oba posouvat o jedno město, dokud se nesetkají. Protože jsou od společného města stejně vzdáleni, nemohou se minout.
+
+Tento algoritmus nejprve potřebuje spočítat vzdálenosti Benátek a Milánu od Říma a pak musí urazit vzdálenosti $S_b$ a $S_m$. Tím pádem časová složitost je $\mathcal{O}(R_b + R_m + S_b + S_m)$. Zároveň používá konstantní množství paměti, jak požaduje zadání (ukládá si jen konstantně čísel).
+
+\end{document}

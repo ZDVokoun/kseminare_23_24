@@ -1,0 +1,33 @@
+\documentclass{fkssolpub}
+
+\usepackage[czech]{babel}
+\usepackage{fontspec}
+\usepackage{fkssugar}
+\usepackage{amsmath}
+
+\author{Ondřej Sedláček}
+\school{Gymnázium Oty Pavla} 
+\series{5}
+\problem{5} 
+
+\begin{document}
+
+\section{Úloha 1}
+
+Protože víme, že číslo $N$ slouží jenom k tomu, aby se s ním porovnával každý součet obyvatel podmnožin, jichž je konstatní množství, je časová složitost tohoto programu $\mathcal{O}(1)$. Protože je ale multiplikativní konstanta tohoto programu obrovská, program bude samozřejmě běžet extrémně pomalu.
+
+\section{Úloha 2}
+
+V programu mazání registru můžeme vidět cyklus, kde při každém průchodu se sníží číslo v červeném registru o jedna. A protože při vynulování se liška pošle do domečku, je tedy časová složitost algoritmu $\mathcal{O}(r)$.
+
+\section{Úloha 3}
+
+Z popisu algoritmu je zřejmé, že algoritmus postupně vyzkouší přičítat a odečítat čísla od 1 do nejvýše $2r$ (například v případě, kdy se ke kladnému číslu $r$ přičte
+$r$). A protože přičítání a odečítání trvá lineárně času, časová složitost bude
+$\mathcal{O}(1 + 2 + \dots + 2r) = \mathcal{O}(r^2)$.
+
+\section{Úloha 6}
+
+Základní instrukce, které máme k dispozici, neumožňují přičítat k jakémukoli registru jiné číslo než 1 (podobný je to i u odečítání). A protože ostatní instrukce nemění hodnoty v registru, jediný způsob, jak zrychlit ten program, je nastavit takovou konstantu, aby program nemusel tolikrát přičítat jedničku. Konstanty však zanedbáváme v asymptotické složitosti, proto složitost může být nejlépe $\mathcal{O}(r^2)$.
+
+\end{document}
